@@ -10,7 +10,7 @@ import {SideNavToggle} from "../assets/interfaces/SideNavToggle";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'ForesteLearning';
+  title = 'ForestryEdu';
   users: User[] = [];
   isSidenavCollapsed = false;
   screenWidth = 0;
