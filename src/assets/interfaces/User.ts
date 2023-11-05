@@ -6,5 +6,4 @@ export interface User {
   password : string;
   imageUrl : string;
   jobTitle : string;
-
 }

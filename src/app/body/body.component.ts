@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-body',
@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./body.component.scss']
 })
 export class BodyComponent {
+  @Input() collapsed = false;
+  @Input() screenWidth = 0;
 
+  getBodyClass() {
+    let cls = '';
+    if(this.collapsed && this.screenWidth>768){
+      cls = 'body-trimmed';
+    }
+    else if(this.collapsed && this.screenWidth<=768 && this.screenWidth>0 )
+    {
+      cls ='body-screen';
+    }
+    return cls;
+  }
 }

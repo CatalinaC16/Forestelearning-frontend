@@ -1,36 +1,36 @@
 export const navbarData = [
   {
-    routeLink: 'app-dashboard',
+    routeLink: 'dashboard',
     icon: 'fal fa-home-lg',
     label: 'Home'
   },
   {
-    routeLink: 'app-courses',
+    routeLink: 'courses',
     icon: 'fal fa-books',
     label: 'Courses'
   },
   {
-    routeLink: 'app-practice',
+    routeLink: 'practice',
     icon: 'fal fa-book-reader',
     label: 'Practice'
   },
   {
-    routeLink: 'app-worksheets',
+    routeLink: 'worksheets',
     icon: 'fal fa-pen-fancy',
     label: 'Worksheets'
   },
   {
-    routeLink: 'app-grades',
+    routeLink: 'grades',
     icon: 'fal fa-user-graduate',
     label: 'Grades'
   },
   {
-    routeLink: 'app-awards',
+    routeLink: 'awards',
     icon: 'fal fa-award',
     label: 'Awards'
   },
   {
-    routeLink: 'app-help-user',
+    routeLink: 'help',
     icon: 'fal fa-glasses-alt',
     label: 'Help'
   }

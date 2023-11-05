@@ -13,31 +13,27 @@ import { GradesComponent } from './grades/grades.component';
 import { AwardsComponent } from './awards/awards.component';
 import { HelpUserComponent } from './help-user/help-user.component';
 import {RouterModule} from "@angular/router";
-import {CommonModule, NgClass, NgFor, NgIf, NgStyle} from "@angular/common";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
-    SideNavComponent,
     DashboardComponent,
     CoursesComponent,
     PracticeComponent,
     WorksheetsComponent,
     GradesComponent,
     AwardsComponent,
-    HelpUserComponent
+    HelpUserComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    CommonModule,
-    NgIf,
-    NgFor,
-    NgClass,
-    NgStyle
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
