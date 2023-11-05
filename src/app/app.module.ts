@@ -14,6 +14,7 @@ import { AwardsComponent } from './awards/awards.component';
 import { HelpUserComponent } from './help-user/help-user.component';
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {CommonModule} from "@angular/common";
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
