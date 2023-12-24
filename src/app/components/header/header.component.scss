@@ -1,14 +1,14 @@
-.header{
-  width: calc(100% - 5rem);
+.header {
+  width: calc(100% - 4rem);
   height: 2.7rem;
-  margin-left: 5rem;
+  margin-left: 4rem;
   background: #BDD09F;
   box-sizing: border-box;
   z-index: 1000;
-  top:0;
+  top: 0;
   position: fixed;
-  border-bottom:4px solid #709255;
-  border-top:4px solid #709255;
+  border-bottom: 4px solid #709255;
+  border-top: 4px solid #709255;
 }
 
 .header-trimmed {
@@ -19,4 +19,37 @@
 .header-screen {
   width: calc(100% - 5rem);
   margin-left: 5rem;
+}
+
+.header-content {
+
+  display: flex;
+  flex-direction: row;
+
+  .header-text {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    font-family: cursive;
+    color: #709255;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #40531b;
+    text-stroke-width: 1.5px;
+    text-stroke-color: #40531b;
+  }
+
+  .icon {
+    background: #40531b;
+    text-align: center;
+    width: 3rem;
+    min-width:3rem;
+    border-radius:0.313rem;
+    padding : 0.313rem;
+    font-size: 24px;
+    font-weight:900;
+    cursor:pointer;
+    border:none;
+  }
+
 }
