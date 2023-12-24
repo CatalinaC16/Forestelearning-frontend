@@ -1,6 +1,6 @@
 import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
-import {navbarData} from "../../assets/dataForApp/nav-data";
-import {SideNavToggle} from "../../assets/interfaces/SideNavToggle";
+import {navbarData} from "../../../assets/dataForApp/nav-data";
+import {SideNavToggle} from "../../interfaces/SideNavToggle";
 import {animate, keyframes, style, transition, trigger} from "@angular/animations";
 
 @Component({

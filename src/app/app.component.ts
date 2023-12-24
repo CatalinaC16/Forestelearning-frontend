@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../assets/interfaces/User";
-import {UserService} from "../assets/services/user.service";
+import {User} from "./interfaces/User";
+import {UserService} from "./services/user.service";
 import {HttpErrorResponse} from "@angular/common/http";
-import {SideNavToggle} from "../assets/interfaces/SideNavToggle";
+import {SideNavToggle} from "./interfaces/SideNavToggle";
 
 @Component({
   selector: 'app-root',

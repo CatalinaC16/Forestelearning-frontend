@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {HelpUserComponent} from "./help-user/help-user.component";
-import {AwardsComponent} from "./awards/awards.component";
-import {GradesComponent} from "./grades/grades.component";
-import {PracticeComponent} from "./practice/practice.component";
-import {CoursesComponent} from "./courses/courses.component";
-import {WorksheetsComponent} from "./worksheets/worksheets.component";
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {HelpUserComponent} from "./pages/help-user/help-user.component";
+import {AwardsComponent} from "./pages/awards/awards.component";
+import {GradesComponent} from "./pages/grades/grades.component";
+import {PracticeComponent} from "./pages/practice/practice.component";
+import {CoursesComponent} from "./pages/courses/courses.component";
+import {WorksheetsComponent} from "./pages/worksheets/worksheets.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
