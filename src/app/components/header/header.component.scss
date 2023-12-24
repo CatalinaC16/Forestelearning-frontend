@@ -1,0 +1,22 @@
+.header{
+  width: calc(100% - 5rem);
+  height: 2.7rem;
+  margin-left: 5rem;
+  background: #BDD09F;
+  box-sizing: border-box;
+  z-index: 1000;
+  top:0;
+  position: fixed;
+  border-bottom:4px solid #709255;
+  border-top:4px solid #709255;
+}
+
+.header-trimmed {
+  width: calc(100% - 15rem);
+  margin-left: 15rem;
+}
+
+.header-screen {
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
+}

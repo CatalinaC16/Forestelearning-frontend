@@ -12,6 +12,20 @@ body {
   background: #BDD09F;
 }
 
+body::-webkit-scrollbar {
+  width: 17px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #709255;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #40531b;
+  border-radius: 35px;
+  border: 5px solid #709255;
+}
+
 .card {
   display: flex;
   flex-direction: column;
