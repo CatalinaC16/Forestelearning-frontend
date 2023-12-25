@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  isLogin: boolean = true;
+  isSignUp: boolean = false;
 
+  signUp() {
+    this.isSignUp = true;
+    this.isLogin = false;
+  }
+
+  signIn() {
+    this.isLogin = true;
+    this.isSignUp = false;
+  }
 }

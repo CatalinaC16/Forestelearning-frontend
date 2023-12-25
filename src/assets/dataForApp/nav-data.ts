@@ -2,36 +2,36 @@ export const navbarData = [
   {
     routeLink: 'dashboard',
     icon: 'fal fa-home-lg',
-    label: 'Home'
+    label: 'Acasă'
   },
   {
     routeLink: 'courses',
     icon: 'fal fa-books',
-    label: 'Courses'
+    label: 'Cursuri'
   },
   {
     routeLink: 'practice',
     icon: 'fal fa-book-reader',
-    label: 'Practice'
+    label: 'Practică'
   },
   {
     routeLink: 'worksheets',
     icon: 'fal fa-pen-fancy',
-    label: 'Worksheets'
+    label: 'Fișe de lucru'
   },
   {
     routeLink: 'grades',
     icon: 'fal fa-user-graduate',
-    label: 'Grades'
+    label: 'Calificative'
   },
   {
     routeLink: 'awards',
     icon: 'fal fa-award',
-    label: 'Awards'
+    label: 'Premii'
   },
   {
     routeLink: 'help',
     icon: 'fal fa-glasses-alt',
-    label: 'Help'
+    label: 'Ajutor'
   }
 ];

@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 100%;
   height: calc(100vh - 3.6rem);
   content: "";
@@ -11,4 +11,88 @@
   background-position: center;
   background-size: cover;
   position: relative;
+}
+
+.form-box {
+  width: 90%;
+  max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #BDD09F;
+  padding: 50px 60px 70px;
+  text-align: center;
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  h1::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+    background: black;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .input-field {
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-left: 15px;
+      color: black;
+    }
+  }
+
+  p {
+    text-align: left;
+    font-size: 13px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+}
+
+.btn-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin-top:1rem;
+    flex-basis: 48%;
+    background: #709255;
+    color: black;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+  }
+}
+
+.btn-field button.disabled{
+    background: #eaeaea;
 }

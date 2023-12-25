@@ -1,4 +1,34 @@
 <div class = "container">
+ <div class="form-box">
+   <h1>Înregistrare cont</h1>
+   <form>
+     <div class="input-group">
 
+       <div *ngIf="isSignUp" class = "input-field">
+         <i class="fa-solid fa-user-secret"></i>
+         <input type="text" placeholder="Nume">
+       </div>
+
+       <div class = "input-field">
+         <i class="fa-solid fa-at"></i>
+         <input type="text" placeholder="Email">
+       </div>
+
+       <div class = "input-field">
+         <i class="fa-solid fa-key"></i>
+         <input type="password" placeholder="Password">
+       </div>
+
+       <p>Ai pierdut parola? <a href="password">Apasă aici!</a></p>
+
+     </div>
+   </form>
+
+   <div class="btn-field">
+     <button type="button" (click)="signUp()" [ngClass]="{'disabled':isLogin}">Creare cont</button>
+     <button type="button" (click)="signIn()" [ngClass]="{'disabled':isSignUp}">Conectare cont</button>
+   </div>
+
+ </div>
 </div>
 
