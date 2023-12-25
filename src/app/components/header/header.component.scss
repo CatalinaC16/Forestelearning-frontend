@@ -35,11 +35,11 @@
       font-weight: bold;
       font-style: italic;
       font-family: cursive;
-      color: #709255;
+      color: #40531b;
       -webkit-text-stroke-width: 1.5px;
-      -webkit-text-stroke-color: #40531b;
+      -webkit-text-stroke-color: #BDD09F;
       text-stroke-width: 1.5px;
-      text-stroke-color: #40531b;
+      text-stroke-color: #BDD09F;
     }
   }
 
@@ -50,7 +50,7 @@
     margin-right: 50px;
 
     .icon {
-      color: #709255;
+      color: #40531b;
       text-align: center;
       width: 3rem;
       min-width: 3rem;
@@ -61,14 +61,13 @@
       cursor: pointer;
       border: none;
       -webkit-text-stroke-width: 1.5px;
-      -webkit-text-stroke-color: #40531b;
+      -webkit-text-stroke-color: #BDD09F;
       text-stroke-width: 1.5px;
-      text-stroke-color: #40531b;
+      text-stroke-color: #BDD09F;
       .fa-times{
-        color:#40531b;
+        color:#BDD09F;
         font-size:30px;
       }
     }
   }
-
 }
