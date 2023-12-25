@@ -18,7 +18,23 @@ import {BodyComponent} from "./components/body/body.component";
 import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {LoginComponent} from "./pages/login/login.component";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {NgxUiLoaderConfig, NgxUiLoaderModule} from "ngx-ui-loader";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
+const ngxUiLoaderConfig: NgxUiLoaderConfig={
+  text:"Loading...",
+  textColor:'#FFFFFF',
+  textPosition:"center-center",
+  bgsColor:"#40531b",
+  fgsColor:"#40531b",
+  fgsType:"ball-spin-clockwise-fade-rotating",
+  fgsSize:100,
+  hasProgressBar:false
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +57,13 @@ import {LoginComponent} from "./pages/login/login.component";
     HttpClientModule,
     RouterModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
