@@ -1,0 +1,14 @@
+.container{
+  width: 100%;
+  height: calc(100vh - 3.6rem);
+  content: "";
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(/assets/login1.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
