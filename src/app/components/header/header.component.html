@@ -1,36 +1,40 @@
-<div class="bigger-header">
-<div class="header-upper" [ngClass]="getHeaderClass()">
-  <div class="header-content">
-    <div class="up">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
-      <img src="../../assets/header.jpg" alt="header">
+<div class="bigger-header" [ngClass]="getHeaderClass()">
+  <div class="header-upper">
+    <div class="header-content">
+      <div class="up">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+        <img src="../../assets/header.jpg" alt="header">
+      </div>
+    </div>
   </div>
-</div>
-</div>
   <div class="down">
-    <i class="far fa-user icon"></i>
+    <p class="header-text">Growing Forest Guardians</p>
+    <div class="right">
+      <i class="far fa-user icon" [routerLink]="['login']"
+         routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><p class="header-text log">Sign-Up/Log-In</p></i>
+    </div>
   </div>
 </div>

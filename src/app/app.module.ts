@@ -17,6 +17,7 @@ import {SideNavComponent} from "./components/side-nav/side-nav.component";
 import {BodyComponent} from "./components/body/body.component";
 import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
+import {LoginComponent} from "./pages/login/login.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {FooterComponent} from "./components/footer/footer.component";
     HelpUserComponent,
     SideNavComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
