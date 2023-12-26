@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {SnackbarService} from "../../services/snackbar.service";
-import {NgxUiLoaderModule, NgxUiLoaderService} from "ngx-ui-loader";
+import {NgxUiLoaderService} from "ngx-ui-loader";
 import {Constants} from "../../../assets/constants/constants";
 
 @Component({
@@ -17,8 +17,6 @@ export class LoginComponent implements OnInit {
   isSignUp: boolean = false;
   signupForm: any = FormGroup;
   responseMessage: any;
-  count1:number=0;
-  count2:number=0;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -29,15 +27,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      name: [null, [Validators.required, Validators.pattern(Constants.nameRegex)]],
-      email: [null, [Validators.required, Validators.pattern(Constants.emailRegex)]],
-      contactNumber: [null, [Validators.required, Validators.pattern(Constants.contactNumberRegex)]],
-      password: [null, [Validators.required]]
+      name: ['', [Validators.required, Validators.pattern(Constants.nameRegex)]],
+      email: ['', [Validators.required, Validators.pattern(Constants.emailRegex)]],
+      contactNumber: ['', [Validators.required, Validators.pattern(Constants.contactNumberRegex)]],
+      password: ['', [Validators.required]]
     })
   }
 
+  isFormValid(): boolean {
+    return this.signupForm.valid && this.signupForm.touched;
+  }
+
   signUp() {
-    if(this.isSignUp) {
+    if(this.isSignUp && this.signupForm.valid) {
       this.ngxService.start();
       var formData = this.signupForm.value;
       var data = {

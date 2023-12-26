@@ -1,60 +1,64 @@
-<div class = "container">
- <div class="form-box">
-   <h1 *ngIf="isSignUp">Înregistrare cont</h1>
-   <h1 *ngIf="isLogin">Autentificare cont</h1>
-   <form [formGroup]="signupForm">
-     <div class="input-group">
+<div class="container">
+  <div class="form-box">
+    <h1 *ngIf="isSignUp">Înregistrare cont</h1>
+    <h1 *ngIf="isLogin">Autentificare cont</h1>
+    <form [formGroup]="signupForm">
+      <div class="input-group">
 
-       <div *ngIf="isSignUp" class = "input-field">
-         <i class="fa-solid fa-user-secret"></i>
-         <input matInput formControlName="name" type="text" placeholder="Nume" required>
-         <mat-error *ngIf="signupForm.controls.name.touched && signupForm.controls.name.invalid">
-           <span *ngIf="signupForm.controls.name.errors.required">Obligatoriu</span>
-           <span *ngIf="signupForm.controls.name.errors.invalid">Invalid</span>
-         </mat-error>
-       </div>
+        <div *ngIf="isSignUp" class="input-field">
+          <i class="fa-solid fa-user-secret"></i>
+          <input matInput formControlName="name" type="text" placeholder="Nume" required>
+          <mat-error *ngIf="signupForm.controls.name.touched && signupForm.controls.name.invalid">
+            <span *ngIf="signupForm.controls.name.errors.required">Obligatoriu</span>
+            <span *ngIf="signupForm.controls.name.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
 
-       <div class = "input-field">
-         <i class="fa-solid fa-at"></i>
-         <input matInput formControlName="email" type="text" placeholder="Email" required>
-         <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.invalid">
-           <span *ngIf="signupForm.controls.email.errors.required">Obligatoriu</span>
-           <span *ngIf="signupForm.controls.email.errors.invalid">Invalid</span>
-         </mat-error>
-       </div>
+        <div class="input-field">
+          <i class="fa-solid fa-at"></i>
+          <input matInput formControlName="email" type="text" placeholder="Email" required>
+          <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.invalid">
+            <span *ngIf="signupForm.controls.email.errors.required">Obligatoriu</span>
+            <span *ngIf="signupForm.controls.email.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
 
-       <div class = "input-field">
-         <i class="fa-solid fa-key"></i>
-         <input matInput formControlName="password" [type]="password ? 'password':'text'" placeholder="Parola" required>
-         <button type = "button" mat-icon-button matSuffix (click)="password=!password" [attr.arial-label]="'Hide password'" [attr.aria-pressed]="password">
-           <i class="fa-solid fa-eye-slash"></i>
-         </button>
+        <div class="input-field">
+          <i class="fa-solid fa-key"></i>
+          <input matInput formControlName="password" [type]="password ? 'password':'text'" placeholder="Parola"
+                 required>
+          <button type="button" mat-icon-button matSuffix (click)="password=!password"
+                  [attr.arial-label]="'Hide password'" [attr.aria-pressed]="password">
+            <i class="fa-solid fa-eye-slash"></i>
+          </button>
 
-         <mat-error *ngIf="signupForm.controls.password.touched && signupForm.controls.password.invalid">
-           <span *ngIf="signupForm.controls.password.errors.required">Obligatoriu</span>
-           <span *ngIf="signupForm.controls.password.errors.invalid">Invalid</span>
-         </mat-error>
-       </div>
+          <mat-error *ngIf="signupForm.controls.password.touched && signupForm.controls.password.invalid">
+            <span *ngIf="signupForm.controls.password.errors.required">Obligatoriu</span>
+            <span *ngIf="signupForm.controls.password.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
 
-       <div *ngIf="isSignUp" class = "input-field">
-         <i class="fa-regular fa-address-card"></i>
-         <input matInput formControlName="contactNumber" type="text" placeholder="Numar de contact" required>
-         <mat-error *ngIf="signupForm.controls.contactNumber.touched && signupForm.controls.contactNumber.invalid">
-           <span *ngIf="signupForm.controls.contactNumber.errors.required">Obligatoriu</span>
-           <span *ngIf="signupForm.controls.contactNumber.errors.invalid">Invalid</span>
-         </mat-error>
-       </div>
+        <div *ngIf="isSignUp" class="input-field">
+          <i class="fa-regular fa-address-card"></i>
+          <input matInput formControlName="contactNumber" type="text" placeholder="Numar de contact" required>
+          <mat-error *ngIf="signupForm.controls.contactNumber.touched && signupForm.controls.contactNumber.invalid">
+            <span *ngIf="signupForm.controls.contactNumber.errors.required">Obligatoriu</span>
+            <span *ngIf="signupForm.controls.contactNumber.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
 
-       <p>Ai pierdut parola? <a href="password">Apasă aici!</a></p>
+        <p>Ai pierdut parola? <a href="password">Apasă aici!</a></p>
 
-     </div>
-   </form>
+      </div>
+    </form>
 
-   <div class="btn-field">
-     <button type="button" (click)="signUp()" [ngClass]="{'disabled':isLogin}">Creare cont</button>
-     <button type="button" (click)="signIn()" [ngClass]="{'disabled':isSignUp}">Conectare cont</button>
-   </div>
+    <div class="btn-field">
+      <button type="button" (click)="signUp()" [ngClass]="{'disabled':isLogin}">Creare cont
+      </button>
+      <button type="button" (click)="signIn()" [ngClass]="{'disabled':isSignUp}">Conectare cont
+      </button>
+    </div>
 
- </div>
+  </div>
 </div>
 
