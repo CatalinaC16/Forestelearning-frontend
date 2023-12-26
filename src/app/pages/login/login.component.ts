@@ -34,12 +34,16 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  isFormValid(): boolean {
-    return this.signupForm.valid && this.signupForm.touched;
-  }
-
   signUp() {
-    if(this.isSignUp && this.signupForm.valid) {
+    console.log(this.signupForm.get('name'))
+    console.log(this.signupForm.get('email'))
+    console.log(this.signupForm.get('contactNumber'))
+    if (this.isSignUp
+      && this.signupForm.get('name').value !== null && this.signupForm.get('name').valid
+      && this.signupForm.get('email').value !== null && this.signupForm.get('email').valid
+      && this.signupForm.get('password').value !== null && this.signupForm.get('password').valid
+      && this.signupForm.get('contactNumber').value !== null && this.signupForm.get('contactNumber').valid
+    ) {
       this.ngxService.start();
       var formData = this.signupForm.value;
       var data = {
@@ -68,6 +72,31 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
+    if (this.isLogin
+      && this.signupForm.get('email').value !== null && this.signupForm.get('email').valid
+      && this.signupForm.get('password').value !== null && this.signupForm.get('password').valid) {
+      this.ngxService.start();
+      var formData = this.signupForm.value;
+      var data = {
+        email: formData.email,
+        password: formData.password
+      }
+      this.userService.login(data).subscribe((response: any) => {
+        this.ngxService.stop();
+        localStorage.setItem('token', response.token);
+        this.responseMessage = response?.message;
+        this.snackBarService.openSnackBar(this.responseMessage, "");
+        this.router.navigate(['/']);
+      }, (error) => {
+        this.ngxService.stop();
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = Constants.generateError;
+        }
+        this.snackBarService.openSnackBar(this.responseMessage, Constants.error);
+      })
+    }
     this.isLogin = true;
     this.isSignUp = false;
   }
