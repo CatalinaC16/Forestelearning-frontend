@@ -67,8 +67,10 @@ mat-snack-bar-container {
 }
 
 .mat-mdc-snack-bar-container {
-  bottom:2rem!important;
-  --mdc-snackbar-container-shape: 4px;
+  top:0rem !important;
+  bottom:0rem !important;
+  right:1rem !important;
+  left:4.5rem !important;
   position: fixed !important;
   z-index: 9999;
 }
