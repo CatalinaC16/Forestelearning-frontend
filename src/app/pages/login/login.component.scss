@@ -16,8 +16,9 @@
 .form-box {
   width: 90%;
   max-width: 450px;
+  border-radius: 20px;
   position: absolute;
-  top: 50%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #BDD09F;
@@ -80,7 +81,7 @@ input {
   justify-content: space-between;
 
   button {
-    margin-top:1rem;
+    margin-top:0.5rem;
     flex-basis: 48%;
     background: #678d58;
     color: black;
@@ -101,4 +102,24 @@ span{
 }
 button i{
   font-size: 16px;
+}
+
+label {
+  display: inline-block;
+  padding: 8px 8px;
+  font-size: 10px;
+  border: 2px solid #678d58;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: white;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #678d58;
+  color: white;
+}
+
+label:hover {
+  background-color: #678d58;
 }

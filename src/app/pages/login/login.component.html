@@ -2,7 +2,7 @@
   <div class="form-box">
     <h1 *ngIf="isSignUp">Înregistrare cont</h1>
     <h1 *ngIf="isLogin">Autentificare cont</h1>
-    <form [formGroup]="signupForm" >
+    <form [formGroup]="signupForm">
       <div class="input-group">
 
         <div *ngIf="isSignUp" class="input-field">
@@ -36,6 +36,7 @@
             <span *ngIf="signupForm.controls.password.errors.required">Obligatoriu</span>
             <span *ngIf="signupForm.controls.password.errors.invalid">Invalid</span>
           </mat-error>
+
         </div>
 
         <div *ngIf="isSignUp" class="input-field">
@@ -46,11 +47,24 @@
             <span *ngIf="signupForm.controls.contactNumber.errors.invalid">Invalid</span>
           </mat-error>
         </div>
-
-        <p>Ai pierdut parola? <a href="password">Apasă aici!</a></p>
-
+        <div *ngIf="isSignUp">
+          <label>
+            <input type="radio" value="student" formControlName="role" checked>
+            Student
+          </label>
+          <label>
+            <input type="radio" value="professor" formControlName="role" >
+            Profesor
+          </label>
+          <label>
+            <input type="radio" value="admin" formControlName="role">
+            Admin
+          </label>
+        </div>
       </div>
     </form>
+
+    <p>Ai pierdut parola? <a href="password">Apasă aici!</a></p>
 
     <div class="btn-field">
       <button type="button" (click)="signUp()" [ngClass]="{'disabled':isLogin}">Creare cont

@@ -32,12 +32,13 @@ export class LoginComponent implements OnInit {
       name: ['', [Validators.required, Validators.pattern(Constants.nameRegex)]],
       email: ['', [Validators.required, Validators.pattern(Constants.emailRegex)]],
       contactNumber: ['', [Validators.required, Validators.pattern(Constants.contactNumberRegex)]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required]],
+      role:['',[]]
     })
   }
 
   signUp() {
-    if (this.isSignUp
+     if (this.isSignUp
       && this.signupForm.get('name').value !== null && this.signupForm.get('name').valid
       && this.signupForm.get('email').value !== null && this.signupForm.get('email').valid
       && this.signupForm.get('password').value !== null && this.signupForm.get('password').valid
@@ -49,7 +50,8 @@ export class LoginComponent implements OnInit {
         name: formData.name,
         email: formData.email,
         contactNumber: formData.contactNumber,
-        password: formData.password
+        password: formData.password,
+        role:formData.role
       }
       this.userService.signup(data).subscribe((response: any) => {
         this.ngxService.stop();
