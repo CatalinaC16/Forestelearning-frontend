@@ -11,6 +11,12 @@ export class LoginService {
     localStorage.setItem('token', token);
   }
 
+  logOut(){
+    localStorage.setItem('username', '');
+    localStorage.setItem('isLogged', String(false));
+    localStorage.setItem('token', '');
+  }
+
   getUsernameFromLocalStorage(): string {
     return localStorage.getItem('username') || '';
   }

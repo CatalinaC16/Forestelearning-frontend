@@ -55,7 +55,8 @@ export class LoginComponent implements OnInit {
         this.ngxService.stop();
         this.responseMessage = response?.message;
         this.snackBarService.openSnackBar(this.responseMessage, "");
-        this.router.navigate(['/']);
+        this.router.navigate(['/login']);
+        this.logIn();
       }, (error) => {
         this.ngxService.stop();
         if (error.error?.message) {

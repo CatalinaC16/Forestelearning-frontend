@@ -38,7 +38,7 @@
          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><p class="header-text log">Înregistrare/Autentificare</p></i>
       <i *ngIf="this.loginService.getIsLoggedFromLocalStorage()" class="fa-solid fa-user-secret icon" [routerLink]="['updateUser']"
          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><p class="header-text log">{{this.loginService.getUsernameFromLocalStorage()}}</p></i>
-      <i *ngIf="this.loginService.getIsLoggedFromLocalStorage()" class="fa-solid fa-right-from-bracket sgn"><p class="header-text log"></p></i>
+      <i *ngIf="this.loginService.getIsLoggedFromLocalStorage()" class="fa-solid fa-right-from-bracket sgn" (click)="this.loginService.logOut()"><p class="header-text log"></p></i>
     </div>
   </div>
 </div>

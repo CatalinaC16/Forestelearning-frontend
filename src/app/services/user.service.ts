@@ -20,5 +20,4 @@ export class UserService{
   login(data:any){
     return this.http.post(this.apiServiceUrl+ "/user/login",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')})
   }
-
 }
