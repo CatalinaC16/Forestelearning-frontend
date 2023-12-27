@@ -46,22 +46,29 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.green-snackbar{
-  background:darkgreen !important;
-  color: bisque !important;
+.green-snackbar {
+  color: darkgreen !important;
 }
 
-.black-snackbar{
-  background:darkred !important;
-  color: bisque !important;
+.black-snackbar {
+  color: darkred !important;
 }
-.cdk-overlay-pane{
-  float:right;
-  matgin-right: 30px;
-  bottom:0px;
-  width:0px;
+
+mat-snack-bar-container{
+  float: right;
+  margin-right: 100px;
+  bottom: 0;
 }
+
+.simple-snackbar .cdk-overlay-pane {
+  float: right;
+  margin-right: 10px;
+  bottom: 0;
+}
+
 #snackbar {
+  margin-right: 30px;
+  background-color: #40531b;
   visibility: hidden;
   min-width: 250px;
   text-align: center;
@@ -79,11 +86,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
         this.ngxService.stop();
         localStorage.setItem('token', response.token);
         this.responseMessage = response?.message;
-        this.snackBarService.openSnackBar("Logare cu succes1", "");
+        this.snackBarService.openSnackBar("Ați fost autentificat cu succes. Bine ați revenit!", "");
         this.router.navigate(['/']);
       }, (error) => {
         this.ngxService.stop();
