@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.pattern(Constants.emailRegex)]],
       contactNumber: ['', [Validators.required, Validators.pattern(Constants.contactNumberRegex)]],
       password: ['', [Validators.required]],
-      role:['',[]]
+      role:['',[Validators.required]]
     })
   }
 
@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
       && this.signupForm.get('email').value !== null && this.signupForm.get('email').valid
       && this.signupForm.get('password').value !== null && this.signupForm.get('password').valid
       && this.signupForm.get('contactNumber').value !== null && this.signupForm.get('contactNumber').valid
+      && this.signupForm.get('role').value !== null && this.signupForm.get('role').valid
     ) {
       this.ngxService.start();
       var formData = this.signupForm.value;
