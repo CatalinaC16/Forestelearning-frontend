@@ -5,6 +5,7 @@ import {UserService} from "../../services/user.service";
 import {SnackbarService} from "../../services/snackbar.service";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {Constants} from "../../../assets/constants/constants";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
               private router: Router,
               private userService: UserService,
               private snackBarService: SnackbarService,
-              private ngxService: NgxUiLoaderService) {
+              private ngxService: NgxUiLoaderService,
+              private loginService: LoginService) {
   }
 
   ngOnInit() {
@@ -35,9 +37,6 @@ export class LoginComponent implements OnInit {
   }
 
   signUp() {
-    console.log(this.signupForm.get('name'))
-    console.log(this.signupForm.get('email'))
-    console.log(this.signupForm.get('contactNumber'))
     if (this.isSignUp
       && this.signupForm.get('name').value !== null && this.signupForm.get('name').valid
       && this.signupForm.get('email').value !== null && this.signupForm.get('email').valid
@@ -71,7 +70,7 @@ export class LoginComponent implements OnInit {
     this.isLogin = false;
   }
 
-  signIn() {
+  logIn() {
     if (this.isLogin
       && this.signupForm.get('email').value !== null && this.signupForm.get('email').valid
       && this.signupForm.get('password').value !== null && this.signupForm.get('password').valid) {
@@ -83,9 +82,10 @@ export class LoginComponent implements OnInit {
       }
       this.userService.login(data).subscribe((response: any) => {
         this.ngxService.stop();
-        localStorage.setItem('token', response.token);
+        this.loginService.setLocalStorageValues(response.user.name,true,response.token);
         this.responseMessage = response?.message;
         this.snackBarService.openSnackBar("Ați fost autentificat cu succes. Bine ați revenit!", "");
+
         this.router.navigate(['/']);
       }, (error) => {
         this.ngxService.stop();

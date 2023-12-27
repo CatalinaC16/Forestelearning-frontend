@@ -1,5 +1,6 @@
 import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {SideNavToggle} from "../../interfaces/SideNavToggle";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,9 @@ import {SideNavToggle} from "../../interfaces/SideNavToggle";
 export class HeaderComponent{
   @Input() collapsed = false;
   @Input() screenWidth = 0;
+
+  constructor(public loginService: LoginService) {
+  }
 
   getHeaderClass() {
     let cls = '';
