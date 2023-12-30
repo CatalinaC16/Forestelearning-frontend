@@ -5,7 +5,7 @@ import {UserService} from "../../services/user.service";
 import {SnackbarService} from "../../services/snackbar.service";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {Constants} from "../../../assets/constants/constants";
-import {LoginService} from "../../services/login.service";
+import {UserChangesService} from "../../services/userChanges.service";
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
               private userService: UserService,
               private snackBarService: SnackbarService,
               private ngxService: NgxUiLoaderService,
-              private loginService: LoginService) {
+              private loginService: UserChangesService) {
   }
 
   ngOnInit() {

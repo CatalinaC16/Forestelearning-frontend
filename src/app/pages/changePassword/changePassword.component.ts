@@ -8,52 +8,49 @@ import {Constants} from "../../../assets/constants/constants";
 import {UserChangesService} from "../../services/userChanges.service";
 
 @Component({
-  selector: 'app-updateUser',
-  templateUrl: './updateUser.component.html',
-  styleUrls: ['./updateUser.component.scss']
+  selector: 'app-changePassword',
+  templateUrl: './changePassword.component.html',
+  styleUrls: ['./changePassword.component.scss']
 })
-export class UpdateUserComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
   signupForm: any = FormGroup;
   responseMessage: any;
-  password: boolean = true;
-  name: string = '';
-  role: string ='';
-  contactNumber = '';
-
+  oldPasswordFlag: boolean = true;
+  newPasswordFlag: boolean = true;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private userService: UserService,
+              private userChangesService: UserChangesService,
               private snackBarService: SnackbarService,
-              private ngxService: NgxUiLoaderService,
-              private loginService: UserChangesService) {
+              private ngxService: NgxUiLoaderService) {
   }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.pattern(Constants.nameRegex)]],
-      contactNumber: ['', [Validators.required, Validators.pattern(Constants.contactNumberRegex)]],
-      role:['',[Validators.required]]
+      oldPassword: ['', [Validators.required]],
+      newPassword: ['', [Validators.required]]
     })
   }
 
-  modify() {
+  changePassword() {
+    if (
+      this.signupForm.get('oldPassword').value !== null && this.signupForm.get('oldPassword').valid &&
+      this.signupForm.get('newPassword').value !== null && this.signupForm.get('newPassword').valid) {
       this.ngxService.start();
       var formData = this.signupForm.value;
       var data = {
-        email: this.loginService.getEmailFromLocalStorage(),
-        name: formData.name,
-        contactNumber: formData.contactNumber,
-        role: formData.role
+        email: this.userChangesService.getEmailFromLocalStorage(),
+        oldPassword: formData.oldPassword,
+        newPassword: formData.newPassword,
       }
       console.log(data)
-      localStorage.setItem('username',formData.name);
-      this.userService.modify(data).subscribe((response: any) => {
+      this.userService.changePassword(data).subscribe((response: any) => {
         this.ngxService.stop();
         this.responseMessage = response?.message;
-        this.snackBarService.openSnackBar("Datele contului au fost modificate cu succes!", "");
-
-        this.router.navigate(['/']);
+        this.snackBarService.openSnackBar("Parola a fost schimbată cu succes!", "");
+        this.userChangesService.logOut();
+        this.router.navigate(['/login']);
       }, (error) => {
         this.ngxService.stop();
         if (error.error?.message) {
@@ -64,4 +61,5 @@ export class UpdateUserComponent implements OnInit {
         this.snackBarService.openSnackBar(this.responseMessage, Constants.error);
       })
     }
+  }
 }

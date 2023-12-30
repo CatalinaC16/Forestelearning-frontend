@@ -5,7 +5,7 @@ import {SnackbarService} from "./snackbar.service";
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UserChangesService {
   constructor(private router: Router,
               private snackBarService: SnackbarService) {
   }

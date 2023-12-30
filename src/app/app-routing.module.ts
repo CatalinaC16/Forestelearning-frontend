@@ -10,6 +10,7 @@ import {WorksheetsComponent} from "./pages/worksheets/worksheets.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {ForgotPasswordComponent} from "./pages/forgotPassword/forgotPassword.component";
 import {UpdateUserComponent} from "./pages/updateUser/updateUser.component";
+import {ChangePasswordComponent} from "./pages/changePassword/changePassword.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'help', component:HelpUserComponent},
   {path: 'login', component:LoginComponent},
   {path: 'password', component:ForgotPasswordComponent},
-  {path: 'updateUser', component:UpdateUserComponent}
+  {path: 'updateUser', component:UpdateUserComponent},
+  {path: 'changePassword', component:ChangePasswordComponent}
 ];
 
 @NgModule({
