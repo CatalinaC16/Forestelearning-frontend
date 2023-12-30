@@ -8,6 +8,7 @@ import {PracticeComponent} from "./pages/practice/practice.component";
 import {CoursesComponent} from "./pages/courses/courses.component";
 import {WorksheetsComponent} from "./pages/worksheets/worksheets.component";
 import {LoginComponent} from "./pages/login/login.component";
+import {ForgotPasswordComponent} from "./pages/forgotPassword/forgotPassword.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'grades', component:GradesComponent},
   {path: 'awards', component:AwardsComponent},
   {path: 'help', component:HelpUserComponent},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path: 'password', component:ForgotPasswordComponent}
 ];
 
 @NgModule({

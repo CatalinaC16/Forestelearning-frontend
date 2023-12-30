@@ -24,6 +24,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {ForgotPasswordComponent} from "./pages/forgotPassword/forgotPassword.component";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
   text:"Loading...",
@@ -49,7 +50,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     SideNavComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
