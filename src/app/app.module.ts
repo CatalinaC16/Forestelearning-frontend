@@ -25,6 +25,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {ForgotPasswordComponent} from "./pages/forgotPassword/forgotPassword.component";
+import {UpdateUserComponent} from "./pages/updateUser/updateUser.component";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
   text:"Loading...",
@@ -51,7 +52,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

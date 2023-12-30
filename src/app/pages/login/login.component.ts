@@ -84,14 +84,17 @@ export class LoginComponent implements OnInit {
         email: formData.email,
         password: formData.password
       }
+
       this.userService.login(data).subscribe((response: any) => {
+
         this.ngxService.stop();
-        this.loginService.setLocalStorageValues(response.user.name,true,response.token);
+        this.loginService.setLocalStorageValues(response.user.name,formData.email,true,response.token);
         this.responseMessage = response?.message;
         this.snackBarService.openSnackBar("Ați fost autentificat cu succes. Bine ați revenit!", "");
-
         this.router.navigate(['/']);
+
       }, (error) => {
+
         this.ngxService.stop();
         if (error.error?.message) {
           this.responseMessage = error.error?.message;

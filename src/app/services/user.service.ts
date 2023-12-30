@@ -22,4 +22,8 @@ export class UserService{
   forgotPassword(data:any){
     return this.http.post(this.apiServiceUrl+ "/user/forgotPassword",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')})
   }
+
+  modify(data:any){
+    return this.http.post(this.apiServiceUrl+ "/user/update",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')})
+  }
 }

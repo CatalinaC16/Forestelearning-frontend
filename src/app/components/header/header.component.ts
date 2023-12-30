@@ -12,8 +12,7 @@ export class HeaderComponent{
   @Input() collapsed = false;
   @Input() screenWidth = 0;
 
-  constructor(public loginService: LoginService,
-              public userService: UserService) {
+  constructor(public loginService: LoginService) {
   }
 
   getHeaderClass() {
