@@ -46,14 +46,13 @@ export class UpdateUserComponent implements OnInit {
         contactNumber: formData.contactNumber,
         role: formData.role
       }
-      localStorage.setItem('username',formData.name);
-      localStorage.setItem('contactNumber',formData.contactNumber);
-      localStorage.setItem('role',formData.role);
       this.userService.modify(data).subscribe((response: any) => {
         this.ngxService.stop();
         this.responseMessage = response?.message;
         this.snackBarService.openSnackBar("Datele contului au fost modificate cu succes!", "");
-
+        localStorage.setItem('username',formData.name);
+        localStorage.setItem('contactNumber',formData.contactNumber);
+        localStorage.setItem('role',formData.role);
         this.router.navigate(['/']);
       }, (error) => {
         this.ngxService.stop();
