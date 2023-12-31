@@ -11,9 +11,8 @@ import {CourseService} from "../../services/course.service";
 })
 export class CoursesComponent {
 
-  private apiServiceUrl = environment.apiBaseUrl;
+  courses:Course[] = [];
 
-  courses:Course[] = []
   constructor(private router: Router,
               private courseService: CourseService) {
     this.getAllCourses();
@@ -21,10 +20,11 @@ export class CoursesComponent {
 
   getAllCourses(): void {
     this.courseService.getAllCourses().subscribe((courses) => {
-      this.courses = courses;
+      this.courses = Object.values(courses) as Course[];
     });
   }
-  startCurs(course: any) {
-    this.router.navigate([this.apiServiceUrl +'/' + course.id])
+
+  startCurs(curs: Course){
+    this.router.navigate(['course',curs.id],{ queryParams: { data: curs.id }});
   }
 }
