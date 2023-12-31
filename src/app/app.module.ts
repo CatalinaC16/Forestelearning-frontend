@@ -17,17 +17,18 @@ import {SideNavComponent} from "./components/side-nav/side-nav.component";
 import {BodyComponent} from "./components/body/body.component";
 import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
-import {LoginComponent} from "./pages/login/login.component";
+import {LoginComponent} from "./pages/userComp/login/login.component";
+import {ForgotPasswordComponent} from "./pages/userComp/forgotPassword/forgotPassword.component";
+import {UpdateUserComponent} from "./pages/userComp/updateUser/updateUser.component";
+import {ChangePasswordComponent} from "./pages/userComp/changePassword/changePassword.component";
+import {CourseTemplateComponent} from "./pages/courseTemplate/courseTemplate.component";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {NgxUiLoaderConfig, NgxUiLoaderModule} from "ngx-ui-loader";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
-import {ForgotPasswordComponent} from "./pages/forgotPassword/forgotPassword.component";
-import {UpdateUserComponent} from "./pages/updateUser/updateUser.component";
-import {ChangePasswordComponent} from "./pages/changePassword/changePassword.component";
-import {CourseTemplateComponent} from "./pages/courseTemplate/courseTemplate.component";
+
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
   text:"Loading...",

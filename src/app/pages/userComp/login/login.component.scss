@@ -7,7 +7,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: url(/assets/login1.png);
+  background-image: url(/src/assets/login1.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -82,7 +82,6 @@ input {
 
   button {
     margin-top:0.5rem;
-    margin-left:5rem;
     flex-basis: 48%;
     background: #678d58;
     color: black;

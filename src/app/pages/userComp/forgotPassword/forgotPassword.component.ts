@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {UserService} from "../../services/user.service";
-import {SnackbarService} from "../../services/snackbar.service";
+import {UserService} from "../../../services/user.service";
+import {SnackbarService} from "../../../services/snackbar.service";
 import {NgxUiLoaderService} from "ngx-ui-loader";
-import {Constants} from "../../../assets/constants/constants";
+import {Constants} from "../../../../assets/constants/constants";
 
 @Component({
   selector: 'app-login',
