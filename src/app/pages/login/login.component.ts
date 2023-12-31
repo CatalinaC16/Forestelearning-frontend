@@ -88,6 +88,8 @@ export class LoginComponent implements OnInit {
       this.userService.login(data).subscribe((response: any) => {
 
         this.ngxService.stop();
+        localStorage.setItem('contactNumber',response.user.contactNumber);
+        localStorage.setItem('role',response.user.role);
         this.loginService.setLocalStorageValues(response.user.name,formData.email,true,response.token);
         this.responseMessage = response?.message;
         this.snackBarService.openSnackBar("Ați fost autentificat cu succes. Bine ați revenit!", "");

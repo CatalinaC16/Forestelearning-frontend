@@ -26,7 +26,7 @@ export class UpdateUserComponent implements OnInit {
               private userService: UserService,
               private snackBarService: SnackbarService,
               private ngxService: NgxUiLoaderService,
-              private loginService: UserChangesService) {
+              public userChangesService: UserChangesService) {
   }
 
   ngOnInit() {
@@ -41,13 +41,14 @@ export class UpdateUserComponent implements OnInit {
       this.ngxService.start();
       var formData = this.signupForm.value;
       var data = {
-        email: this.loginService.getEmailFromLocalStorage(),
+        email: this.userChangesService.getEmailFromLocalStorage(),
         name: formData.name,
         contactNumber: formData.contactNumber,
         role: formData.role
       }
-      console.log(data)
       localStorage.setItem('username',formData.name);
+      localStorage.setItem('contactNumber',formData.contactNumber);
+      localStorage.setItem('role',formData.role);
       this.userService.modify(data).subscribe((response: any) => {
         this.ngxService.stop();
         this.responseMessage = response?.message;

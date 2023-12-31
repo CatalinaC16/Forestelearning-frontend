@@ -35,6 +35,14 @@ export class UserChangesService {
     return localStorage.getItem('email') || '';
   }
 
+  getRoleFromLocalStorage(): string {
+    return localStorage.getItem('role') || '';
+  }
+
+  getContactNumberFromLocalStorage(): string {
+    return localStorage.getItem('contactNumber') || '';
+  }
+
   getIsLoggedFromLocalStorage(): boolean {
     return localStorage.getItem('isLogged') === 'true';
   }
