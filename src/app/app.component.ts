@@ -1,7 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from "./interfaces/User";
-import {UserService} from "./services/user.service";
-import {HttpErrorResponse} from "@angular/common/http";
+import {Component} from '@angular/core';
 import {SideNavToggle} from "./interfaces/SideNavToggle";
 
 @Component({
@@ -9,33 +6,13 @@ import {SideNavToggle} from "./interfaces/SideNavToggle";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
   title = 'ForestryEdu';
-  users: User[] = [];
   isSidenavCollapsed = false;
   screenWidth = 0;
-
-  constructor(private userService: UserService) {
-  }
-
-  ngOnInit() {
-    // this.getUsers();
-  }
-
-  // getUsers(){
-  //   this.userService.getUsers().subscribe(
-  //     (response:User[])=>{
-  //       this.users = response;
-  //     },
-  //     (error:HttpErrorResponse)=>{
-  //       alert(error.message);
-  //     }
-  //   )
-  // }
 
   onToggleSideNav(data: SideNavToggle) {
     this.screenWidth = data.screenWidth;
     this.isSidenavCollapsed = data.collapsed;
   }
-
 }

@@ -1,0 +1,30 @@
+/* curs.component.css */
+
+.curs {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+h2 {
+  color: #40531b;
+  border-bottom: 2px solid #40531b;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #40531b;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
