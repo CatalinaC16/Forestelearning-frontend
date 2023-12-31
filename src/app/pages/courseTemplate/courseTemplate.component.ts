@@ -28,6 +28,4 @@ export class CourseTemplateComponent {
     if (this.curs?.htmlDescription)
       this.sanitizedHtmlDescription = this.sanitizer.bypassSecurityTrustHtml(this.curs.htmlDescription);
   }
-
-
 }
