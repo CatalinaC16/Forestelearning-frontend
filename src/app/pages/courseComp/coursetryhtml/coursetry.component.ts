@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
-import {Course} from "../../model/Course";
+import {Course} from "../../../model/Course";
 import {ActivatedRoute} from "@angular/router";
-import {CourseService} from "../../services/course.service";
+import {CourseService} from "../../../services/course.service";
 import {map} from "rxjs";
 
 @Component({
-  selector: 'app-course-template',
-  templateUrl: './courseTemplate.component.html',
-  styleUrls: ['./courseTemplate.component.scss']
+  selector: 'app-coursetry',
+  templateUrl: './coursetry.component.html',
+  styleUrls: ['./coursetry.component.scss']
 })
-export class CourseTemplateComponent {
+export class CoursetryComponent {
   curs: Course | undefined;
 
   sanitizedHtmlDescription: SafeHtml | undefined;

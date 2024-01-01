@@ -5,13 +5,14 @@ import {HelpUserComponent} from "./pages/help-user/help-user.component";
 import {AwardsComponent} from "./pages/awards/awards.component";
 import {GradesComponent} from "./pages/grades/grades.component";
 import {PracticeComponent} from "./pages/practice/practice.component";
-import {CoursesComponent} from "./pages/courses/courses.component";
+import {CoursesComponent} from "./pages/courseComp/courses/courses.component";
 import {WorksheetsComponent} from "./pages/worksheets/worksheets.component";
 import {LoginComponent} from "./pages/userComp/login/login.component";
 import {ForgotPasswordComponent} from "./pages/userComp/forgotPassword/forgotPassword.component";
 import {UpdateUserComponent} from "./pages/userComp/updateUser/updateUser.component";
 import {ChangePasswordComponent} from "./pages/userComp/changePassword/changePassword.component";
-import {CourseTemplateComponent} from "./pages/courseTemplate/courseTemplate.component";
+import {CourseTemplateComponent} from "./pages/courseComp/courseTemplate/courseTemplate.component";
+import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'password', component:ForgotPasswordComponent},
   {path: 'updateUser', component:UpdateUserComponent},
   {path: 'changePassword', component:ChangePasswordComponent},
-  {path: 'course/:id', component:CourseTemplateComponent}
+  {path: 'course/:id', component:CourseTemplateComponent},
+  {path: 'crs', component:CoursetryComponent}
 ];
 
 @NgModule({

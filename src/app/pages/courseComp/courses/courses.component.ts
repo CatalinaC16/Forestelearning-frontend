@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import {environment} from "../../../environments/environment";
-import {Course} from "../../model/Course";
-import {CourseService} from "../../services/course.service";
+import {environment} from "../../../../environments/environment";
+import {Course} from "../../../model/Course";
+import {CourseService} from "../../../services/course.service";
 
 @Component({
   selector: 'app-courses',

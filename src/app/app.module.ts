@@ -4,14 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { CoursesComponent } from './pages/courses/courses.component';
+import { CoursesComponent } from './pages/courseComp/courses/courses.component';
 import { PracticeComponent } from './pages/practice/practice.component';
 import { WorksheetsComponent } from './pages/worksheets/worksheets.component';
 import { GradesComponent } from './pages/grades/grades.component';
 import { AwardsComponent } from './pages/awards/awards.component';
 import { HelpUserComponent } from './pages/help-user/help-user.component';
 import {RouterModule} from "@angular/router";
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SideNavComponent} from "./components/side-nav/side-nav.component";
 import {BodyComponent} from "./components/body/body.component";
@@ -21,13 +21,14 @@ import {LoginComponent} from "./pages/userComp/login/login.component";
 import {ForgotPasswordComponent} from "./pages/userComp/forgotPassword/forgotPassword.component";
 import {UpdateUserComponent} from "./pages/userComp/updateUser/updateUser.component";
 import {ChangePasswordComponent} from "./pages/userComp/changePassword/changePassword.component";
-import {CourseTemplateComponent} from "./pages/courseTemplate/courseTemplate.component";
+import {CourseTemplateComponent} from "./pages/courseComp/courseTemplate/courseTemplate.component";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {NgxUiLoaderConfig, NgxUiLoaderModule} from "ngx-ui-loader";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.component";
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
@@ -58,7 +59,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     ForgotPasswordComponent,
     UpdateUserComponent,
     ChangePasswordComponent,
-    CourseTemplateComponent
+    CourseTemplateComponent,
+    CoursetryComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
