@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {environment} from "../../../../environments/environment";
 import {Course} from "../../../model/Course";
 import {CourseService} from "../../../services/course.service";
+import {SideNavComponent} from "../../../components/side-nav/side-nav.component";
 
 @Component({
   selector: 'app-courses',
