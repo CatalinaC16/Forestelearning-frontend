@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import {environment} from "../../../../environments/environment";
 import {Course} from "../../../model/Course";
 import {CourseService} from "../../../services/course.service";
-import {SideNavComponent} from "../../../components/side-nav/side-nav.component";
 import {UserChangesService} from "../../../services/userChanges.service";
+import {SnackbarService} from "../../../services/snackbar.service";
+import {NgxUiLoaderService} from "ngx-ui-loader";
+import {Constants} from "../../../../assets/constants/constants";
 
 @Component({
   selector: 'app-courses',
@@ -13,11 +14,13 @@ import {UserChangesService} from "../../../services/userChanges.service";
 })
 export class CoursesComponent {
 
-  courses:Course[] = [];
+  courses: Course[] = [];
 
   constructor(private router: Router,
+              private snackBarService: SnackbarService,
+              private ngxService: NgxUiLoaderService,
               private courseService: CourseService,
-              private userChanges:UserChangesService) {
+              private userChanges: UserChangesService) {
     this.getAllCourses();
   }
 
@@ -27,14 +30,24 @@ export class CoursesComponent {
     });
   }
 
-  isRoleProfesor(){
-    return this.userChanges.getRoleFromLocalStorage()=="professor";
-  }
-  startCurs(curs: Course){
-    this.router.navigate(['course',curs.id],{ queryParams: { data: curs.id }});
+  isRoleProfesor() {
+    return this.userChanges.getRoleFromLocalStorage() == "professor";
   }
 
-  stergeCurs(curs: Course){
-    this.router.navigate(['course',curs.id],{ queryParams: { data: curs.id }});
+  startCurs(curs: Course) {
+    this.router.navigate(['course', curs.id], {queryParams: {data: curs.id}});
+  }
+
+  stergeCurs(curs: Course) {
+    this.ngxService.start();
+    this.courseService.deleteCourseById(curs.id).subscribe((response: any) => {
+      this.ngxService.stop();
+      this.snackBarService.openSnackBar("Cursul a fost sters cu succes!", "");
+      window.location.reload()
+    }, (error) => {
+      this.ngxService.stop();
+      this.snackBarService.openSnackBar("Cursul a fost sters cu succes!", "");
+      window.location.reload()
+    })
   }
 }

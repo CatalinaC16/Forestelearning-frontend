@@ -17,6 +17,10 @@ export class CourseService {
   }
 
   getCourseById(id: number): Observable<Course> {
-    return this.http.get<Course>(this.apiServiceUrl + "/courses/getCourse/"+ id);
+    return this.http.get<Course>(this.apiServiceUrl + "/courses/getCourse/"+ id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
+  }
+
+  deleteCourseById(id: number){
+    return this.http.post(this.apiServiceUrl + "/courses/deleteCourse/"+ id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
   }
 }
