@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 import {Course} from "../../../model/Course";
 import {ActivatedRoute} from "@angular/router";
@@ -8,7 +8,8 @@ import {map} from "rxjs";
 @Component({
   selector: 'app-course-template',
   templateUrl: './courseTemplate.component.html',
-  styleUrls: ['./courseTemplate.component.scss']
+  styleUrls: ['./courseTemplate.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CourseTemplateComponent {
   curs: Course | undefined;
