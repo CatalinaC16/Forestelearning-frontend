@@ -1,4 +1,4 @@
-<button class="butonCreate" [routerLink]="['createCourse']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Creează curs</button>
+<button *ngIf="isRoleProfesor()" class="butonCreate" [routerLink]="['createCourse']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Creează curs</button>
 <div class="courses-container">
   <h2>Cursuri Disponibile</h2>
   <div *ngFor="let course of courses" class="course-item">
@@ -6,5 +6,6 @@
     <img src="{{ course.imageUrl }}" alt="{{ course.title }} Image" />
     <p>{{ course.description }}</p>
     <button (click)="startCurs(course)">Deschide curs</button>
+    <button *ngIf="isRoleProfesor()" (click)="stergeCurs(course)">Sterge curs</button>
   </div>
 </div>
