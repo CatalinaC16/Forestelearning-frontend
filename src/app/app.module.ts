@@ -29,6 +29,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.component";
+import {AuthGuard} from "./guard/AuthGuard.component";
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={

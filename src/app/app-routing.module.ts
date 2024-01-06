@@ -13,21 +13,22 @@ import {UpdateUserComponent} from "./pages/userComp/updateUser/updateUser.compon
 import {ChangePasswordComponent} from "./pages/userComp/changePassword/changePassword.component";
 import {CourseTemplateComponent} from "./pages/courseComp/courseTemplate/courseTemplate.component";
 import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.component";
+import {AuthGuard} from "./guard/AuthGuard.component";
 
 const routes: Routes = [
-  {path:'', redirectTo:'dashboard', pathMatch:'full'},
+  {path:'', redirectTo:'login', pathMatch:'full'},
   {path: 'dashboard', component:DashboardComponent},
-  {path: 'courses', component:CoursesComponent},
-  {path: 'practice', component:PracticeComponent},
-  {path: 'worksheets', component:WorksheetsComponent},
-  {path: 'grades', component:GradesComponent},
-  {path: 'awards', component:AwardsComponent},
-  {path: 'help', component:HelpUserComponent},
+  {path: 'courses', component:CoursesComponent, canActivate: [AuthGuard]},
+  {path: 'practice', component:PracticeComponent, canActivate: [AuthGuard]},
+  {path: 'worksheets', component:WorksheetsComponent, canActivate: [AuthGuard]},
+  {path: 'grades', component:GradesComponent, canActivate: [AuthGuard]},
+  {path: 'awards', component:AwardsComponent, canActivate: [AuthGuard]},
+  {path: 'help', component:HelpUserComponent, canActivate: [AuthGuard]},
   {path: 'login', component:LoginComponent},
   {path: 'password', component:ForgotPasswordComponent},
   {path: 'updateUser', component:UpdateUserComponent},
   {path: 'changePassword', component:ChangePasswordComponent},
-  {path: 'course/:id', component:CourseTemplateComponent},
+  {path: 'course/:id', component:CourseTemplateComponent, canActivate: [AuthGuard]},
   {path: 'crs', component:CoursetryComponent}
 ];
 
