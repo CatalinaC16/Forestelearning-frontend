@@ -53,7 +53,7 @@ export class UpdateUserComponent implements OnInit {
         localStorage.setItem('username',formData.name);
         localStorage.setItem('contactNumber',formData.contactNumber);
         localStorage.setItem('role',formData.role);
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
       }, (error) => {
         this.ngxService.stop();
         if (error.error?.message) {

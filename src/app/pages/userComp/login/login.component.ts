@@ -93,7 +93,7 @@ export class LoginComponent implements OnInit {
         this.loginService.setLocalStorageValues(response.user.name,formData.email,true,response.token);
         this.responseMessage = response?.message;
         this.snackBarService.openSnackBar("Ați fost autentificat cu succes. Bine ați revenit!", "");
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
 
       }, (error) => {
 
