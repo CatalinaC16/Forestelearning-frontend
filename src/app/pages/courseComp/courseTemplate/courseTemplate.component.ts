@@ -22,10 +22,10 @@ export class CourseTemplateComponent {
     this.courseService.getCourseById(val).pipe(
       map(response => response)
     ).subscribe(data => {
-      this.curs = data;
-    });
+      this.curs = data as Course;
 
-    if (this.curs?.htmlDescription)
-      this.sanitizedHtmlDescription = this.sanitizer.bypassSecurityTrustHtml(this.curs.htmlDescription);
+      if (this.curs?.htmlDescription)
+        this.sanitizedHtmlDescription = this.sanitizer.bypassSecurityTrustHtml(this.curs.htmlDescription);
+    });
   }
 }
