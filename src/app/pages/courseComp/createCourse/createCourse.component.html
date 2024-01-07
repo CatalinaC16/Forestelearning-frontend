@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="form-box">
+    <h1>Noul curs</h1>
+    <form [formGroup]="createCourse">
+      <div class="input-group">
+
+        <div *ngIf="createCourse" class="input-field">
+          <i class="fas fa-book"></i>
+          <input matInput formControlName="title" type="text" placeholder="Titlu" required>
+          <mat-error *ngIf="createCourse.controls.title.touched && createCourse.controls.title.invalid">
+            <span *ngIf="createCourse.controls.title.errors.required">Obligatoriu</span>
+            <span *ngIf="createCourse.controls.title.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-image"></i>
+          <input matInput formControlName="image_url" type="text" placeholder="Url imagine" required>
+          <mat-error *ngIf="createCourse.controls.image_url.touched && createCourse.controls.image_url.invalid">
+            <span *ngIf="createCourse.controls.image_url.errors.required">Obligatoriu</span>
+            <span *ngIf="createCourse.controls.image_url.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-align-left"></i>
+          <input matInput formControlName="html_description" type="text" placeholder="Cod html pentru curs" required>
+          <mat-error *ngIf="createCourse.controls.html_description.touched && createCourse.controls.html_description.invalid">
+            <span *ngIf="createCourse.controls.html_description.errors.required">Obligatoriu</span>
+            <span *ngIf="createCourse.controls.html_description.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
+
+      </div>
+    </form>
+
+    <div class="btn-field">
+      <button type="button" (click)="createNewCourse()">Creare curs
+      </button>
+    </div>
+
+  </div>
+</div>
+

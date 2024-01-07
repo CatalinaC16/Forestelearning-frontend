@@ -23,4 +23,8 @@ export class CourseService {
   deleteCourseById(id: number){
     return this.http.post(this.apiServiceUrl + "/courses/deleteCourse/"+ id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
   }
+
+  createCourse(data:any){
+    return this.http.post(this.apiServiceUrl+ "/courses/add",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')})
+  }
 }

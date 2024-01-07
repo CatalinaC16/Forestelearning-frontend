@@ -50,4 +50,8 @@ export class CoursesComponent {
       window.location.reload()
     })
   }
+
+  creazaCurs(){
+    this.router.navigate(['/createCourse']);
+  }
 }

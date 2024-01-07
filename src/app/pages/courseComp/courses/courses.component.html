@@ -1,4 +1,4 @@
-<button *ngIf="isRoleProfesor()" class="butonCreate" [routerLink]="['createCourse']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Creează curs</button>
+<button *ngIf="isRoleProfesor()" (click)="creazaCurs()" class="butonCreate" [routerLink]="['createCourse']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Creează curs</button>
 <div class="courses-container">
   <h2>Cursuri Disponibile</h2>
   <div *ngFor="let course of courses" class="course-item">

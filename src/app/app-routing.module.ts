@@ -14,6 +14,7 @@ import {ChangePasswordComponent} from "./pages/userComp/changePassword/changePas
 import {CourseTemplateComponent} from "./pages/courseComp/courseTemplate/courseTemplate.component";
 import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.component";
 import {AuthGuard} from "./guard/AuthGuard.component";
+import {CreateCourseComponent} from "./pages/courseComp/createCourse/createCourse.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path: 'updateUser', component:UpdateUserComponent},
   {path: 'changePassword', component:ChangePasswordComponent},
   {path: 'course/:id', component:CourseTemplateComponent, canActivate: [AuthGuard]},
-  {path: 'crs', component:CoursetryComponent}
+  {path: 'crs', component:CoursetryComponent},
+  {path: 'createCourse', component:CreateCourseComponent}
 ];
 
 @NgModule({
