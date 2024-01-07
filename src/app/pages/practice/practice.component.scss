@@ -1,0 +1,32 @@
+.practice-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 20px;
+  color: #40531b;
+}
+
+h1, h2{
+  padding-bottom:1.5rem;
+  color: #40531b;
+}
+
+h4{
+  padding-bottom:0.5rem;
+  color:#2b3b0c;
+}
+
+.faq-section, .navigation-section, .technical-issues-section, .contact-section {
+  margin-bottom: 40px;
+}
+
+.faq-item, .navigation-item, .technical-issue-item, .contact-item {
+  margin-bottom: 20px;
+  background-color: #87a272;
+  color:#2b3b0c;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+a{
+  color:#2b3b0c;
+}
