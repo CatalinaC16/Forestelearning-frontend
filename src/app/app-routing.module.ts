@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'worksheets', component:WorksheetsComponent, canActivate: [AuthGuard]},
   {path: 'grades', component:GradesComponent, canActivate: [AuthGuard]},
   {path: 'awards', component:AwardsComponent, canActivate: [AuthGuard]},
-  {path: 'help', component:HelpUserComponent, canActivate: [AuthGuard]},
+  {path: 'help', component:HelpUserComponent},
   {path: 'login', component:LoginComponent},
   {path: 'password', component:ForgotPasswordComponent},
   {path: 'updateUser', component:UpdateUserComponent},
