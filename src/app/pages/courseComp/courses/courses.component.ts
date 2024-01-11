@@ -54,4 +54,8 @@ export class CoursesComponent {
   creazaCurs(){
     this.router.navigate(['/createCourse']);
   }
+
+  goToPractice(){
+    this.router.navigate(['/practice']);
+  }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-practice',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class PracticeComponent {
 
+  constructor(private router: Router) {
+  }
+
+  goBackToCourses() {
+    this.router.navigate(["/courses"]);
+  }
+
+  goToTests(){
+    this.router.navigate(["/worksheets"]);
+  }
 }
