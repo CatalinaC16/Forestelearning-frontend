@@ -31,6 +31,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.component";
 import {AuthGuard} from "./guard/AuthGuard.component";
 import {CreateCourseComponent} from "./pages/courseComp/createCourse/createCourse.component";
+import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
@@ -63,7 +64,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     ChangePasswordComponent,
     CourseTemplateComponent,
     CoursetryComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    AllUsersComponent
   ],
   imports: [
     BrowserModule,

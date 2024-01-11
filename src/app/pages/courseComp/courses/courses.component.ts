@@ -20,7 +20,7 @@ export class CoursesComponent {
               private snackBarService: SnackbarService,
               private ngxService: NgxUiLoaderService,
               private courseService: CourseService,
-              private userChanges: UserChangesService) {
+              private userChangesService: UserChangesService) {
     this.getAllCourses();
   }
 
@@ -31,7 +31,7 @@ export class CoursesComponent {
   }
 
   isRoleProfesor() {
-    return this.userChanges.getRoleFromLocalStorage() == "professor";
+    return this.userChangesService.getRoleFromLocalStorage() == "professor";
   }
 
   startCurs(curs: Course) {

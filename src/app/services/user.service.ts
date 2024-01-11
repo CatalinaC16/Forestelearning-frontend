@@ -30,4 +30,8 @@ export class UserService{
   changePassword(data:any){
     return this.http.post(this.apiServiceUrl+ "/user/changePassword",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')})
   }
+
+  getUsers(){
+    return this.http.get(this.apiServiceUrl + "/user/getAllUsers",{headers:new HttpHeaders().set('Content-Type', 'application/json')});
+  }
 }
