@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 import {Course} from "../../../model/Course";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CourseService} from "../../../services/course.service";
 import {map} from "rxjs";
 
@@ -18,7 +18,9 @@ export class CourseTemplateComponent {
 
   constructor(private sanitizer: DomSanitizer,
               private route: ActivatedRoute,
-              private courseService: CourseService) {
+              private courseService: CourseService,
+              private router: Router) {
+
     let val = this.route.snapshot.queryParamMap.get('data') ? parseInt(this.route.snapshot.queryParamMap.get('data')!, 10) : 0;
     this.courseService.getCourseById(val).pipe(
       map(response => response)
@@ -28,5 +30,10 @@ export class CourseTemplateComponent {
       if (this.curs?.htmlDescription)
         this.sanitizedHtmlDescription = this.sanitizer.bypassSecurityTrustHtml(this.curs.htmlDescription);
     });
+
+  }
+
+  goBackToCourses(){
+    this.router.navigate(["/courses"]);
   }
 }

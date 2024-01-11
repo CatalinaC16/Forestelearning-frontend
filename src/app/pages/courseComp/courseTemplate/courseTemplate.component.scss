@@ -9,6 +9,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   color: #2b3b0c;
+  margin-bottom: 30px;
 
   p {
     margin-bottom: 20px;
@@ -40,4 +41,16 @@
     font-style: italic;
     margin-bottom: 20px;
   }
+}
+
+.butonInapoi {
+  background-color: #40531b;
+  color: #fff;
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
