@@ -1,0 +1,65 @@
+.users-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-count: 3;
+  justify-content: space-between;
+}
+
+.user-item {
+  width: calc(40% - 20px);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: 1px solid #2b3b0c;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #678d58;
+}
+
+
+.user-name {
+  color: #40531b;
+  border-bottom: 2px solid #40531b;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.button-details {
+  background-color: #40531b;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h2{
+  max-width: 900px;
+  margin: 0 auto;
+  color: #40531b;
+  border-bottom: 2px solid #40531b;
+  padding:20px;
+  font-size: 1.7rem;
+}
+
+p{
+  color: #2b3b0c;
+}
+
+button {
+  background-color: #40531b;
+  color: #fff;
+  float: right;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newButton{
+  margin-right: 30px;
+}

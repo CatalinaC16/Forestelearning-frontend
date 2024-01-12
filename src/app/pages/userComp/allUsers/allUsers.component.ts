@@ -7,19 +7,24 @@ import {User} from "../../../model/User";
   templateUrl: './allUsers.component.html',
   styleUrls: ['./allUsers.component.scss']
 })
-export class AllUsersComponent {
+export class AllUsersComponent implements OnInit{
 
-  users: User[]=[]
+  profs: User[]=[]
+  students: User[]=[]
   constructor(private userService: UserService) {
-    this.getAllCourses();
   }
 
-  getAllCourses(): void {
-    this.userService.getUsers().subscribe((users) => {
-      this.users = Object.values(users) as User[];
-      console.log(this.users)
-    });
+  ngOnInit() {
+    this.getAllUsers();
+  }
 
+  getAllUsers(): void {
+    this.userService.getProf().subscribe((profs) => {
+      this.profs = Object.values(profs) as User[];
+    });
+    this.userService.getStudents().subscribe((students) => {
+      this.students = Object.values(students) as User[];
+    });
   }
 
 }

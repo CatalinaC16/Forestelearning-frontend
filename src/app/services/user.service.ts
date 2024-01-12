@@ -31,7 +31,11 @@ export class UserService{
     return this.http.post(this.apiServiceUrl+ "/user/changePassword",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')})
   }
 
-  getUsers(){
+  getProf(){
     return this.http.get(this.apiServiceUrl + "/user/getAllUsers",{headers:new HttpHeaders().set('Content-Type', 'application/json')});
+  }
+
+  getStudents(){
+    return this.http.get(this.apiServiceUrl + "/user/getAllStudents",{headers:new HttpHeaders().set('Content-Type', 'application/json')});
   }
 }

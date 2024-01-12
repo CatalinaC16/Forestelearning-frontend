@@ -1,6 +1,27 @@
+<button class="newButton" [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Creaza un nou user</button>
+<div class="container">
+<h2>Profesori</h2>
 <div class="users-container">
+  <div *ngFor="let user of profs" class="user-item">
+    <div class="user-details">
+      <h2 class="user-name">{{ user.name }}</h2>
+      <p>Email: {{ user.email }}</p>
+      <p>Numar de contact: {{ user.contactNumber }}</p>
+      <button>Sterge</button>
+      <button>Modifica</button>
+    </div>
+  </div>
+</div>
 
-  <div class="user-item">
-
+<h2>Studenti</h2>
+<div class="users-container">
+  <div *ngFor="let student of students" class="user-item">
+    <div class="user-details">
+      <h2 class="user-name">{{ student.name }}</h2>
+      <p>Email: {{ student.email }}</p>
+      <p>Numar de contact: {{ student.contactNumber }}</p>
+      <button>Sterge</button>
+      <button>Modifica</button>
+    </div>
   </div>
 </div>
