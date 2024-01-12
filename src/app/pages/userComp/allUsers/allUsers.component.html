@@ -7,7 +7,7 @@
       <h2 class="user-name">{{ user.name }}</h2>
       <p>Email: {{ user.email }}</p>
       <p>Numar de contact: {{ user.contactNumber }}</p>
-      <button>Sterge</button>
+      <button (click)="stergeUser(user)">Sterge</button>
       <button>Modifica</button>
     </div>
   </div>
@@ -20,7 +20,7 @@
       <h2 class="user-name">{{ student.name }}</h2>
       <p>Email: {{ student.email }}</p>
       <p>Numar de contact: {{ student.contactNumber }}</p>
-      <button>Sterge</button>
+      <button (click)="stergeUser(student)">Sterge</button>
       <button>Modifica</button>
     </div>
   </div>

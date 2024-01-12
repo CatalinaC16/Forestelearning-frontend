@@ -38,4 +38,8 @@ export class UserService{
   getStudents(){
     return this.http.get(this.apiServiceUrl + "/user/getAllStudents",{headers:new HttpHeaders().set('Content-Type', 'application/json')});
   }
+
+  deleteUserById(id: number){
+    return this.http.post(this.apiServiceUrl + "/user/deleteUser/"+ id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
+  }
 }

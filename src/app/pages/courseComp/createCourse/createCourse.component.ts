@@ -1,12 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {UserService} from "../../../services/user.service";
 import {SnackbarService} from "../../../services/snackbar.service";
 import {NgxUiLoaderService} from "ngx-ui-loader";
-import {UserChangesService} from "../../../services/userChanges.service";
 import {CourseService} from "../../../services/course.service";
-import {Constants} from "../../../../assets/constants/constants";
 
 @Component({
   selector: 'app-createCourse',
@@ -15,15 +12,12 @@ import {Constants} from "../../../../assets/constants/constants";
 })
 export class CreateCourseComponent implements OnInit {
   createCourse: any = FormGroup;
-  responseMessage: any;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private courseService: CourseService,
-              private userService: UserService,
               private snackBarService: SnackbarService,
-              private ngxService: NgxUiLoaderService,
-              private loginService: UserChangesService) {
+              private ngxService: NgxUiLoaderService) {
   }
 
   ngOnInit() {
