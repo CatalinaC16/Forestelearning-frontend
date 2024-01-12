@@ -18,11 +18,11 @@
           <input type="radio" value="student" formControlName="role" checked [ngModel]="this.userChangesService.getRoleFromLocalStorage()">
           Student
         </label>
-        <label>
+        <label *ngIf="isRoleAdmin() || isRoleProfessor()">
           <input type="radio" value="professor" formControlName="role" [ngModel]="this.userChangesService.getRoleFromLocalStorage()">
           Profesor
         </label>
-        <label>
+        <label *ngIf="isRoleAdmin()">
           <input type="radio" value="admin" formControlName="role" [ngModel]="this.userChangesService.getRoleFromLocalStorage()">
           Admin
         </label>

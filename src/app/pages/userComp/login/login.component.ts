@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
               private userService: UserService,
               private snackBarService: SnackbarService,
               private ngxService: NgxUiLoaderService,
-              private loginService: UserChangesService) {
+              private userChangesService: UserChangesService) {
   }
 
   ngOnInit() {
@@ -90,7 +90,7 @@ export class LoginComponent implements OnInit {
         this.ngxService.stop();
         localStorage.setItem('contactNumber',response.user.contactNumber);
         localStorage.setItem('role',response.user.role);
-        this.loginService.setLocalStorageValues(response.user.name,formData.email,true,response.token);
+        this.userChangesService.setLocalStorageValues(response.user.name,formData.email,true,response.token);
         this.responseMessage = response?.message;
         this.snackBarService.openSnackBar("Ați fost autentificat cu succes. Bine ați revenit!", "");
         this.router.navigate(['/dashboard']);
@@ -108,5 +108,9 @@ export class LoginComponent implements OnInit {
     }
     this.isLogin = true;
     this.isSignUp = false;
+  }
+
+  isRoleAdmin() {
+    return this.userChangesService.getRoleFromLocalStorage() == "admin";
   }
 }

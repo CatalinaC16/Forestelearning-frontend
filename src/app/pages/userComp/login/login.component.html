@@ -52,11 +52,11 @@
             <input type="radio" value="student" formControlName="role" checked>
             Student
           </label>
-          <label>
+          <label *ngIf="isRoleAdmin()">
             <input type="radio" value="professor" formControlName="role" >
             Profesor
           </label>
-          <label>
+          <label *ngIf="isRoleAdmin()">
             <input type="radio" value="admin" formControlName="role">
             Admin
           </label>

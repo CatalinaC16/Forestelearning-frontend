@@ -64,4 +64,12 @@ export class UpdateUserComponent implements OnInit {
         this.snackBarService.openSnackBar(this.responseMessage, Constants.error);
       })
     }
+
+  isRoleAdmin() {
+    return this.userChangesService.getRoleFromLocalStorage() == "admin";
+  }
+
+  isRoleProfessor() {
+    return this.userChangesService.getRoleFromLocalStorage() == "professor";
+  }
 }

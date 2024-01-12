@@ -24,6 +24,7 @@ export class UserChangesService {
     localStorage.setItem('isLogged', String(false));
     localStorage.setItem('token', '');
     localStorage.setItem('email', '');
+    localStorage.setItem('role', '');
 
   }
 
