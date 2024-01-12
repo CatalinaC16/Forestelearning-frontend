@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: calc(100vh - 3.6rem);
+  height: calc(100vh - 5.6rem);
   content: "";
   opacity: 0.6;
   top: 0;
@@ -18,11 +18,11 @@
   max-width: 450px;
   border-radius: 20px;
   position: absolute;
-  top: 46%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #BDD09F;
-  padding: 50px 60px 40px;
+  padding: 15px 50px 15px;
   text-align: center;
 
   h1 {
