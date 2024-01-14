@@ -42,4 +42,8 @@ export class UserService{
   deleteUserById(id: number){
     return this.http.post(this.apiServiceUrl + "/user/deleteUser/"+ id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
   }
+
+  getUserById(id:number){
+    return this.http.post(this.apiServiceUrl + "/user/getUser/"+ id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
+  }
 }

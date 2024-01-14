@@ -5,4 +5,5 @@ export class User {
   email: string='';
   contactNumber: string='';
   status: string='';
+  role:string = '';
 }

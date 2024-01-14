@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import {HelpUserComponent} from "./pages/help-user/help-user.component";
-import {AwardsComponent} from "./pages/awards/awards.component";
 import {GradesComponent} from "./pages/grades/grades.component";
 import {PracticeComponent} from "./pages/practice/practice.component";
 import {CoursesComponent} from "./pages/courseComp/courses/courses.component";
@@ -16,6 +15,7 @@ import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.com
 import {AuthGuard} from "./guard/AuthGuard.component";
 import {CreateCourseComponent} from "./pages/courseComp/createCourse/createCourse.component";
 import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
+import {UpdateUsersByAdminComponent} from "./pages/userComp/updateUsersByAdmin/updateUsersByAdmin.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -24,7 +24,6 @@ const routes: Routes = [
   {path: 'practice', component:PracticeComponent, canActivate: [AuthGuard]},
   {path: 'worksheets', component:WorksheetsComponent, canActivate: [AuthGuard]},
   {path: 'grades', component:GradesComponent, canActivate: [AuthGuard]},
-  {path: 'awards', component:AwardsComponent, canActivate: [AuthGuard]},
   {path: 'help', component:HelpUserComponent},
   {path: 'login', component:LoginComponent},
   {path: 'password', component:ForgotPasswordComponent},
@@ -33,7 +32,8 @@ const routes: Routes = [
   {path: 'course/:id', component:CourseTemplateComponent, canActivate: [AuthGuard]},
   {path: 'crs', component:CoursetryComponent},
   {path: 'createCourse', component:CreateCourseComponent},
-  {path: 'getAllUsers', component:AllUsersComponent}
+  {path: 'getAllUsers', component:AllUsersComponent},
+  {path: 'updateUsersByAdmin/:id', component: UpdateUsersByAdminComponent }
 ];
 
 @NgModule({

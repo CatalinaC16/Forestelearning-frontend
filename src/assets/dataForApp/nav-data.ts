@@ -25,11 +25,6 @@ export const navbarData = [
     label: 'Calificative'
   },
   {
-    routeLink: 'awards',
-    icon: 'fal fa-award',
-    label: 'Premii'
-  },
-  {
     routeLink: 'help',
     icon: 'fal fa-glasses-alt',
     label: 'Ajutor'

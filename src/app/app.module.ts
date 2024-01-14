@@ -8,7 +8,6 @@ import { CoursesComponent } from './pages/courseComp/courses/courses.component';
 import { PracticeComponent } from './pages/practice/practice.component';
 import { WorksheetsComponent } from './pages/worksheets/worksheets.component';
 import { GradesComponent } from './pages/grades/grades.component';
-import { AwardsComponent } from './pages/awards/awards.component';
 import { HelpUserComponent } from './pages/help-user/help-user.component';
 import {RouterModule} from "@angular/router";
 import {CommonModule, NgOptimizedImage} from "@angular/common";
@@ -32,6 +31,7 @@ import {CoursetryComponent} from "./pages/courseComp/coursetryhtml/coursetry.com
 import {AuthGuard} from "./guard/AuthGuard.component";
 import {CreateCourseComponent} from "./pages/courseComp/createCourse/createCourse.component";
 import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
+import {UpdateUsersByAdminComponent} from "./pages/userComp/updateUsersByAdmin/updateUsersByAdmin.component";
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
@@ -53,7 +53,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     PracticeComponent,
     WorksheetsComponent,
     GradesComponent,
-    AwardsComponent,
     HelpUserComponent,
     SideNavComponent,
     HeaderComponent,
@@ -65,7 +64,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     CourseTemplateComponent,
     CoursetryComponent,
     CreateCourseComponent,
-    AllUsersComponent
+    AllUsersComponent,
+    UpdateUsersByAdminComponent
   ],
   imports: [
     BrowserModule,

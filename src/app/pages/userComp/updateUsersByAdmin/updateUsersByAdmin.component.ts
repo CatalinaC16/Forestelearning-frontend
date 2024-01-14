@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../services/user.service";
 import {SnackbarService} from "../../../services/snackbar.service";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {Constants} from "../../../../assets/constants/constants";
 import {UserChangesService} from "../../../services/userChanges.service";
+import {User} from "../../../model/User";
 
 @Component({
-  selector: 'app-updateUser',
+  selector: 'app-updateUserByAdmin',
   templateUrl: './updateUsersByAdmin.component.html',
   styleUrls: ['./updateUsersByAdmin.component.scss']
 })
@@ -19,17 +20,25 @@ export class UpdateUsersByAdminComponent implements OnInit {
   name: string = '';
   role: string ='';
   contactNumber = '';
-
+  userId: number = 0;
+  user: User = new User();
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private userService: UserService,
               private snackBarService: SnackbarService,
               private ngxService: NgxUiLoaderService,
-              public userChangesService: UserChangesService) {
+              public userChangesService: UserChangesService,
+              private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      this.userId = params['id'];
+    });
   }
 
   ngOnInit() {
+    this.userService.getUserById(this.userId).subscribe((data)=>{
+      this.user = JSON.parse(JSON.stringify(data)) as User;
+    });
     this.signupForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.pattern(Constants.nameRegex)]],
       contactNumber: ['', [Validators.required, Validators.pattern(Constants.contactNumberRegex)]],
@@ -41,7 +50,7 @@ export class UpdateUsersByAdminComponent implements OnInit {
       this.ngxService.start();
       var formData = this.signupForm.value;
       var data = {
-        email: this.userChangesService.getEmailFromLocalStorage(),
+        email: this.user.email,
         name: formData.name,
         contactNumber: formData.contactNumber,
         role: formData.role
@@ -49,11 +58,8 @@ export class UpdateUsersByAdminComponent implements OnInit {
       this.userService.modify(data).subscribe((response: any) => {
         this.ngxService.stop();
         this.responseMessage = response?.message;
-        this.snackBarService.openSnackBar("Datele contului au fost modificate cu succes!", "");
-        localStorage.setItem('username',formData.name);
-        localStorage.setItem('contactNumber',formData.contactNumber);
-        localStorage.setItem('role',formData.role);
-        this.router.navigate(['/dashboard']);
+        this.snackBarService.openSnackBar("Datele user-ului au fost modificate cu succes!", "");
+        this.router.navigate(['/getAllUsers']);
       }, (error) => {
         this.ngxService.stop();
         if (error.error?.message) {

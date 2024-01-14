@@ -8,7 +8,7 @@
       <p>Email: {{ user.email }}</p>
       <p>Numar de contact: {{ user.contactNumber }}</p>
       <button (click)="stergeUser(user)">Sterge</button>
-      <button [routerLink]="['/updateUser']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Modifica</button>
+      <button [routerLink]="['/updateUsersByAdmin',user.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Modifica</button>
     </div>
   </div>
 </div>
@@ -21,7 +21,7 @@
       <p>Email: {{ student.email }}</p>
       <p>Numar de contact: {{ student.contactNumber }}</p>
       <button (click)="stergeUser(student)">Sterge</button>
-      <button>Modifica</button>
+      <button [routerLink]="['/updateUsersByAdmin',student.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Modifica</button>
     </div>
   </div>
 </div>
