@@ -6,6 +6,8 @@
 }
 
 h1, h2{
+  font-size: 1.9rem;
+  font-style: italic;
   padding-bottom:1.5rem;
   color: #40531b;
 }
@@ -37,6 +39,49 @@ a{
   float: right;
   margin-right: 20px;
   margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h3 {
+  padding-bottom: 1rem;
+  font-style: italic;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #40531b;
+  color: #40531b;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+p{
+  padding-left: 1rem;
+}
+.cuprins {
+  border: 2px solid #40531b;
+  margin-bottom: 20px;
+}
+
+.cuprins h3 {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.cuprins ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cuprins li {
+  margin-bottom: 5px;
+}
+
+button{
+  background-color: #40531b;
+  color: #fff;
+  margin-right: 20px;
+  margin-left: 20px;
   padding: 10px;
   border: none;
   border-radius: 5px;

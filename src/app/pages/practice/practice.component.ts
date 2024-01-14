@@ -18,4 +18,8 @@ export class PracticeComponent {
   goToTests(){
     this.router.navigate(["/worksheets"]);
   }
+
+  scrollTo(element: any): void {
+    (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }
