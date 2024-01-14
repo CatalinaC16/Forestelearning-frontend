@@ -3,3 +3,4 @@
 <app-body [collapsed]="isSidenavCollapsed" [screenWidth]="screenWidth"></app-body>
 <app-footer [collapsed]="isSidenavCollapsed" [screenWidth]="screenWidth"></app-footer>
 <ngx-ui-loader></ngx-ui-loader>
+<button (click)="scrollToTop()" *ngIf="showScrollButton" class="scrollUpButton"><i class="fa-solid fa-arrow-up"></i></button>

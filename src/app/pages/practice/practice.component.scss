@@ -59,6 +59,7 @@ p{
   padding-left: 1rem;
 }
 .cuprins {
+  width: 30%;
   border: 2px solid #40531b;
   margin-bottom: 20px;
 }
@@ -77,13 +78,16 @@ p{
   margin-bottom: 5px;
 }
 
-button{
+.cuprins-button{
   background-color: #40531b;
+  width: 90%;
   color: #fff;
   margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 15px;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
+
+

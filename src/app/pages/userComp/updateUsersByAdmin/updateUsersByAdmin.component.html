@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="form-box">
+    <h1>Introduce-ți credențialele pe care vreți să le modificați pentru contul curent</h1>
+    <form [formGroup]="signupForm">
+      <div class="input-group">
+
+        <div class="input-field">
+          <i class="fa-solid fa-user"></i>
+          <input matInput formControlName="name" type="text" placeholder="Nume" required [ngModel]="this.userChangesService.getUsernameFromLocalStorage()">
+        </div>
+
+        <div class="input-field">
+          <i class="fa-solid fa-phone"></i>
+          <input matInput formControlName="contactNumber" type="text" placeholder="Număr de contact" required [ngModel]="this.userChangesService.getContactNumberFromLocalStorage()">
+        </div>
+
+        <label>
+          <input type="radio" value="student" formControlName="role" checked [ngModel]="this.userChangesService.getRoleFromLocalStorage()">
+          Student
+        </label>
+        <label *ngIf="isRoleAdmin() || isRoleProfessor()">
+          <input type="radio" value="professor" formControlName="role" [ngModel]="this.userChangesService.getRoleFromLocalStorage()">
+          Profesor
+        </label>
+        <label *ngIf="isRoleAdmin()">
+          <input type="radio" value="admin" formControlName="role" [ngModel]="this.userChangesService.getRoleFromLocalStorage()">
+          Admin
+        </label>
+      </div>
+    </form>
+    <p>Vrei să schimbi parola? <a href="changePassword">Apasă aici!</a></p>
+    <div class="btn-field">
+      <button type="button" (click)="modify()">Modifică </button>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -7,8 +7,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./practice.component.scss']
 })
 export class PracticeComponent {
-
-  constructor(private router: Router) {
+   constructor(private router: Router) {
   }
 
   goBackToCourses() {

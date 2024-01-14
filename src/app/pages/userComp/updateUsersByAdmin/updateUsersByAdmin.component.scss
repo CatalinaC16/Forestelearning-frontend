@@ -1,0 +1,126 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 5.6rem);
+  content: "";
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('login1.png') center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.form-box {
+  width: 90%;
+  max-width: 450px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #BDD09F;
+  padding: 15px 50px 15px;
+  text-align: center;
+
+  h1 {
+    font-size: 25px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  h1::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+    background: black;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .input-field {
+    background: #eaeaea;
+    margin: 10px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-left: 15px;
+      color: black;
+    }
+  }
+
+  p {
+    text-align: left;
+    font-size: 13px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+}
+
+.btn-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin-top:0.5rem;
+    margin-left:5rem;
+    flex-basis: 48%;
+    background: #678d58;
+    color: black;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+  }
+}
+
+.btn-field button.disabled{
+    background: #eaeaea;
+}
+span{
+  color:red;
+}
+button i{
+  font-size: 16px;
+}
+
+label {
+  display: inline-block;
+  padding: 8px 8px;
+  font-size: 10px;
+  border: 2px solid #678d58;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: white;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #678d58;
+  color: white;
+}
+
+label:hover {
+  background-color: #678d58;
+}
