@@ -1,1 +1,11 @@
-<p>worksheets works!</p>
+<h2>Quiz-uri Disponibile</h2>
+<div class="courses-container">
+  <div *ngFor="let quiz of quizzes" class="course-item">
+    <h3>{{ quiz.title }}</h3>
+    <p>{{ quiz.description }}</p>
+    <button (click)="startQuiz(quiz)">Deschide quiz</button>
+    <button *ngIf="isRoleProfesor()" (click)="stergeQuiz(quiz)">Șterge quiz</button>
+  </div>
+</div>
+<button class="butonNavigate" (click)="goToPractice()">Mergi la exersarea notiunilor</button>
+
