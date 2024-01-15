@@ -45,17 +45,4 @@
   cursor: pointer;
 }
 
-input[type="radio"] {
-  appearance: none;
-  width: 15px;
-  height:15px;
-  border-radius: 50%;
-  border: 2px solid #40531b;
-  background-color: #40531b;
-  cursor: pointer;
-  outline: none;
-}
-input[type="radio"]:checked {
-  background-color: #709255;
-  border-color: #BDD09F;
-}
+

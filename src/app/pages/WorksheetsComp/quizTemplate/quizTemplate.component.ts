@@ -6,6 +6,7 @@ import {CourseService} from "../../../services/course.service";
 import {map} from "rxjs";
 import {Quiz} from "../../../model/Quiz";
 import {QuizService} from "../../../services/quiz.service";
+import {SnackbarService} from "../../../services/snackbar.service";
 
 @Component({
   selector: 'app-quiz-template',
@@ -22,6 +23,7 @@ export class QuizTemplateComponent {
   constructor(private sanitizer: DomSanitizer,
               private route: ActivatedRoute,
               private quizService: QuizService,
+              private snackBarService: SnackbarService,
               private router: Router) {
 
     let val = this.route.snapshot.queryParamMap.get('data') ? parseInt(this.route.snapshot.queryParamMap.get('data')!, 10) : 0;
@@ -74,6 +76,6 @@ export class QuizTemplateComponent {
         }
       }
     });
-
+    this.snackBarService.openSnackBar("Nota obtinuta este: "+nota, "");
   }
 }
