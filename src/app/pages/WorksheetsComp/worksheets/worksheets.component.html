@@ -1,4 +1,4 @@
-<button *ngIf="isRoleProfesor()" (click)="creeazaQuiz()" class="butonCreate" [routerLink]="['createCourse']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Creează quiz</button>
+<button *ngIf="isRoleProfesor()" (click)="creeazaQuiz()" class="butonCreate" [routerLink]="['createCourse']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Creeaza quiz</button>
 
 <h2>Quiz-uri Disponibile</h2>
 <div class="courses-container">
@@ -6,7 +6,7 @@
     <h3>{{ quiz.title }}</h3>
     <img src="{{ quiz.course.imageUrl }}" alt="{{ quiz.course.title }} Image" />
     <button (click)="startQuiz(quiz)">Deschide quiz</button>
-    <button *ngIf="isRoleProfesor()" (click)="stergeQuiz(quiz)">Șterge quiz</button>
+    <button *ngIf="isRoleProfesor()" (click)="stergeQuiz(quiz)">Sterge quiz</button>
   </div>
 </div>
 <button class="butonNavigate" (click)="goToPractice()">Mergi la exersarea notiunilor</button>
