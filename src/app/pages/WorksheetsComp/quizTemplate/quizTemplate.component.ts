@@ -15,6 +15,7 @@ import {QuizService} from "../../../services/quiz.service";
 })
 export class QuizTemplateComponent {
   quiz :Quiz | undefined;
+  options: string[] =[];
 
   sanitizedHtmlDescription: SafeHtml | undefined;
 
@@ -28,6 +29,7 @@ export class QuizTemplateComponent {
       map(response => response)
     ).subscribe(data => {
       this.quiz = data as Quiz;
+      this.options = this.quiz.correctOptions.split(',');
 
       if (this.quiz?.htmlDescription)
         this.sanitizedHtmlDescription = this.sanitizer.bypassSecurityTrustHtml(this.quiz.htmlDescription);
@@ -36,5 +38,42 @@ export class QuizTemplateComponent {
 
   goBackToPractice(){
     this.router.navigate(["/worksheets"]);
+  }
+
+  sendForm(){
+    let nota  = 2;
+    const radioButtons1 = document.getElementsByName('q1') as NodeListOf<HTMLInputElement>;
+    radioButtons1.forEach((radioButton) => {
+      if (radioButton.checked) {
+        if (radioButton.value === this.options[0]){
+          nota+=2;
+        }
+      }
+    });
+    const radioButtons2 = document.getElementsByName('q2') as NodeListOf<HTMLInputElement>;
+    radioButtons2.forEach((radioButton) => {
+      if (radioButton.checked) {
+        if (radioButton.value === this.options[1]){
+          nota+=2;
+        }
+      }
+    });
+    const radioButtons3 = document.getElementsByName('q3') as NodeListOf<HTMLInputElement>;
+    radioButtons3.forEach((radioButton) => {
+      if (radioButton.checked) {
+        if (radioButton.value === this.options[2]){
+          nota+=2;
+        }
+      }
+    });
+    const radioButtons4 = document.getElementsByName('q4') as NodeListOf<HTMLInputElement>;
+    radioButtons4.forEach((radioButton) => {
+      if (radioButton.checked) {
+        if (radioButton.value === this.options[3]){
+          nota+=2;
+        }
+      }
+    });
+
   }
 }

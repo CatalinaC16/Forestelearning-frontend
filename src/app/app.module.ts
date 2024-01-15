@@ -23,7 +23,7 @@ import {ChangePasswordComponent} from "./pages/userComp/changePassword/changePas
 import {CourseTemplateComponent} from "./pages/courseComp/courseTemplate/courseTemplate.component";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {NgxUiLoaderConfig, NgxUiLoaderModule} from "ngx-ui-loader";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
@@ -73,21 +73,22 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     QuizTryComponent,
     CreateQuizComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    RouterModule,
-    CommonModule,
-    BrowserAnimationsModule,
-    MatSnackBarModule,
-    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    ReactiveFormsModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    NgOptimizedImage
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        RouterModule,
+        CommonModule,
+        BrowserAnimationsModule,
+        MatSnackBarModule,
+        NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+        ReactiveFormsModule,
+        MatInputModule,
+        MatIconModule,
+        MatButtonModule,
+        NgOptimizedImage,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
