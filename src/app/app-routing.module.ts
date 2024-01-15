@@ -5,7 +5,7 @@ import {HelpUserComponent} from "./pages/help-user/help-user.component";
 import {GradesComponent} from "./pages/grades/grades.component";
 import {PracticeComponent} from "./pages/practice/practice.component";
 import {CoursesComponent} from "./pages/courseComp/courses/courses.component";
-import {WorksheetsComponent} from "./pages/worksheets/worksheets.component";
+import {WorksheetsComponent} from "./pages/WorksheetsComp/worksheets/worksheets.component";
 import {LoginComponent} from "./pages/userComp/login/login.component";
 import {ForgotPasswordComponent} from "./pages/userComp/forgotPassword/forgotPassword.component";
 import {UpdateUserComponent} from "./pages/userComp/updateUser/updateUser.component";
@@ -16,6 +16,7 @@ import {AuthGuard} from "./guard/AuthGuard.component";
 import {CreateCourseComponent} from "./pages/courseComp/createCourse/createCourse.component";
 import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
 import {UpdateUsersByAdminComponent} from "./pages/userComp/updateUsersByAdmin/updateUsersByAdmin.component";
+import {QuizTemplateComponent} from "./pages/WorksheetsComp/quizTemplate/quizTemplate.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path: 'crs', component:CoursetryComponent},
   {path: 'createCourse', component:CreateCourseComponent},
   {path: 'getAllUsers', component:AllUsersComponent},
-  {path: 'updateUsersByAdmin/:id', component: UpdateUsersByAdminComponent }
+  {path: 'updateUsersByAdmin/:id', component: UpdateUsersByAdminComponent },
+  {path: 'quiz/:id', component:QuizTemplateComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

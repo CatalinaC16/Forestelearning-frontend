@@ -1,0 +1,56 @@
+.forest-info {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #709255;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  color: #2b3b0c;
+  margin-bottom: 30px;
+
+  p {
+    margin-bottom: 20px;
+    text-align: justify;
+    position: relative;
+
+  }
+
+  h2 {
+    font-size: 24px;
+    border-bottom: 2px solid #40531b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #40531b;
+  }
+
+  img {
+    max-width: 50%;
+    max-height: 20%;
+    margin-left: 25%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .quote {
+    border-left: 4px solid #40531b;
+    padding-left: 15px;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+}
+
+.butonInapoi {
+  background-color: #40531b;
+  color: #fff;
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

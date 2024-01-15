@@ -6,7 +6,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CoursesComponent } from './pages/courseComp/courses/courses.component';
 import { PracticeComponent } from './pages/practice/practice.component';
-import { WorksheetsComponent } from './pages/worksheets/worksheets.component';
+import { WorksheetsComponent } from './pages/WorksheetsComp/worksheets/worksheets.component';
 import { GradesComponent } from './pages/grades/grades.component';
 import { HelpUserComponent } from './pages/help-user/help-user.component';
 import {RouterModule} from "@angular/router";
@@ -32,6 +32,7 @@ import {AuthGuard} from "./guard/AuthGuard.component";
 import {CreateCourseComponent} from "./pages/courseComp/createCourse/createCourse.component";
 import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
 import {UpdateUsersByAdminComponent} from "./pages/userComp/updateUsersByAdmin/updateUsersByAdmin.component";
+import {QuizTemplateComponent} from "./pages/WorksheetsComp/quizTemplate/quizTemplate.component";
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
@@ -65,7 +66,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     CoursetryComponent,
     CreateCourseComponent,
     AllUsersComponent,
-    UpdateUsersByAdminComponent
+    UpdateUsersByAdminComponent,
+    QuizTemplateComponent
   ],
   imports: [
     BrowserModule,

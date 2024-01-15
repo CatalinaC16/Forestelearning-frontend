@@ -1,8 +1,8 @@
 <h2>Quiz-uri Disponibile</h2>
 <div class="courses-container">
-  <div *ngFor="let quiz of quizzes" class="course-item">
+  <div *ngFor="let quiz of quizes" class="course-item">
     <h3>{{ quiz.title }}</h3>
-    <p>{{ quiz.description }}</p>
+    <img src="{{ quiz.course.imageUrl }}" alt="{{ quiz.course.title }} Image" />
     <button (click)="startQuiz(quiz)">Deschide quiz</button>
     <button *ngIf="isRoleProfesor()" (click)="stergeQuiz(quiz)">Șterge quiz</button>
   </div>
