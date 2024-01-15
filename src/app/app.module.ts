@@ -34,6 +34,7 @@ import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
 import {UpdateUsersByAdminComponent} from "./pages/userComp/updateUsersByAdmin/updateUsersByAdmin.component";
 import {QuizTemplateComponent} from "./pages/WorksheetsComp/quizTemplate/quizTemplate.component";
 import {QuizTryComponent} from "./pages/WorksheetsComp/quizTry/quizTry.component";
+import {CreateQuizComponent} from "./pages/WorksheetsComp/createQuiz/createQuiz.component";
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig={
@@ -69,7 +70,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig={
     AllUsersComponent,
     UpdateUsersByAdminComponent,
     QuizTemplateComponent,
-    QuizTryComponent
+    QuizTryComponent,
+    CreateQuizComponent
   ],
   imports: [
     BrowserModule,

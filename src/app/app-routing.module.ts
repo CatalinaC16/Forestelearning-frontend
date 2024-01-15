@@ -18,6 +18,7 @@ import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
 import {UpdateUsersByAdminComponent} from "./pages/userComp/updateUsersByAdmin/updateUsersByAdmin.component";
 import {QuizTemplateComponent} from "./pages/WorksheetsComp/quizTemplate/quizTemplate.component";
 import {QuizTryComponent} from "./pages/WorksheetsComp/quizTry/quizTry.component";
+import {CreateQuizComponent} from "./pages/WorksheetsComp/createQuiz/createQuiz.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'course/:id', component:CourseTemplateComponent, canActivate: [AuthGuard]},
   {path: 'crs', component:CoursetryComponent},
   {path: 'createCourse', component:CreateCourseComponent},
+  {path: 'createQuiz', component:CreateQuizComponent},
   {path: 'getAllUsers', component:AllUsersComponent},
   {path: 'updateUsersByAdmin/:id', component: UpdateUsersByAdminComponent },
   {path: 'quiz/:id', component:QuizTemplateComponent, canActivate: [AuthGuard]},

@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="form-box">
+    <h1>Noul quiz</h1>
+    <form [formGroup]="createQuiz">
+      <div class="input-group">
+
+        <div *ngIf="createQuiz" class="input-field">
+          <i class="fas fa-book"></i>
+          <input matInput formControlName="title" type="text" placeholder="Titlu" required>
+          <mat-error *ngIf="createQuiz.controls.title.touched && createQuiz.controls.title.invalid">
+            <span *ngIf="createQuiz.controls.title.errors.required">Obligatoriu</span>
+            <span *ngIf="createQuiz.controls.title.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-image"></i>
+          <input matInput formControlName="course_id" type="text" placeholder="Curs id" required>
+          <mat-error *ngIf="createQuiz.controls.course_id.touched && createQuiz.controls.course_id.invalid">
+            <span *ngIf="createQuiz.controls.course_id.errors.required">Obligatoriu</span>
+            <span *ngIf="createQuiz.controls.course_id.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-align-left"></i>
+          <input matInput formControlName="html_description" type="text" placeholder="Cod html pentru quiz" required>
+          <mat-error *ngIf="createQuiz.controls.html_description.touched && createQuiz.controls.html_description.invalid">
+            <span *ngIf="createQuiz.controls.html_description.errors.required">Obligatoriu</span>
+            <span *ngIf="createQuiz.controls.html_description.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-thumbs-up"></i>
+          <input matInput formControlName="correct_options" type="text" placeholder="Optiuni corecte separate prin virgula" required>
+          <mat-error *ngIf="createQuiz.controls.correct_options.touched && createQuiz.controls.correct_options.invalid">
+            <span *ngIf="createQuiz.controls.correct_options.errors.required">Obligatoriu</span>
+            <span *ngIf="createQuiz.controls.correct_options.errors.invalid">Invalid</span>
+          </mat-error>
+        </div>
+
+      </div>
+    </form>
+
+    <div class="btn-field">
+      <button type="button" (click)="createNewQuiz()">Creare Quiz
+      </button>
+    </div>
+
+  </div>
+</div>
+
