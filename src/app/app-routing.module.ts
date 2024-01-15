@@ -17,6 +17,7 @@ import {CreateCourseComponent} from "./pages/courseComp/createCourse/createCours
 import {AllUsersComponent} from "./pages/userComp/allUsers/allUsers.component";
 import {UpdateUsersByAdminComponent} from "./pages/userComp/updateUsersByAdmin/updateUsersByAdmin.component";
 import {QuizTemplateComponent} from "./pages/WorksheetsComp/quizTemplate/quizTemplate.component";
+import {QuizTryComponent} from "./pages/WorksheetsComp/quizTry/quizTry.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'getAllUsers', component:AllUsersComponent},
   {path: 'updateUsersByAdmin/:id', component: UpdateUsersByAdminComponent },
   {path: 'quiz/:id', component:QuizTemplateComponent, canActivate: [AuthGuard]},
+  {path: 'qz', component:QuizTryComponent},
 ];
 
 @NgModule({
