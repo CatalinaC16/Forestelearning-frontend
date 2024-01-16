@@ -12,7 +12,7 @@ export class ProgressService {
   }
 
   getProgressByUser(id:number){
-    return this.http.get(this.apiServiceUrl + "progress/getProgressByUser/"+id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
+    return this.http.get(this.apiServiceUrl + "/progress/getProgressByUser/"+id,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
   }
 
   addProgressToUser(data:any){
