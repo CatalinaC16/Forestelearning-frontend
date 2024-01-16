@@ -1,8 +1,18 @@
-<div class="progress-container">
-  <h2>Progresul tău</h2>
+<div *ngIf="this.userChangesService.getRoleFromLocalStorage() !== 'professor'" class="progress-container">
+  <h2 >Progresul tău</h2>
   <div *ngFor="let item of progress" class="progress-details">
     <p><strong>Quiz:</strong> {{ item.quiz.title }}</p>
+    <p *ngIf="this.userChangesService.getRoleFromLocalStorage() === 'professor'"><strong>Nume user:</strong> {{ item.user.name }}</p>
     <img src="{{item.quiz.course.imageUrl }}" alt="{{ item.quiz.course.title }} Image" />
+    <p><strong>Nota:</strong> {{ item.grade }}</p>
+  </div>
+</div>
+
+<div class="progress-container">
+  <h2>Progres useri</h2>
+  <div *ngFor="let item of allProgress" class="progress-details">
+    <p><strong>Quiz:</strong> {{ item.quiz.title }}</p>
+    <p *ngIf="this.userChangesService.getRoleFromLocalStorage() === 'professor'"><strong>Nume user:</strong> {{ item.user.name }}</p>
     <p><strong>Nota:</strong> {{ item.grade }}</p>
   </div>
 </div>
