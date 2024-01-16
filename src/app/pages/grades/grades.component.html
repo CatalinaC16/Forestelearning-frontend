@@ -1,1 +1,8 @@
-<p>grades works!</p>
+<div class="progress-container">
+  <h2>Progresul tău</h2>
+  <div *ngFor="let item of progress" class="progress-details">
+    <p><strong>Quiz:</strong> {{ item.quiz.title }}</p>
+    <img src="{{item.quiz.course.imageUrl }}" alt="{{ item.quiz.course.title }} Image" />
+    <p><strong>Nota:</strong> {{ item.grade }}</p>
+  </div>
+</div>

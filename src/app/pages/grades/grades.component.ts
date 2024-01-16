@@ -9,11 +9,11 @@ import {Progress} from "../../model/Progress";
 })
 export class GradesComponent {
 
-  progress: Progress = new Progress();
+  progress: Progress[] = [];
 
   constructor(private progressService: ProgressService) {
     this.progressService.getProgressByUser(Number(localStorage.getItem('id'))).subscribe((data) => {
-      this.progress = data as Progress;
+      this.progress = data as Progress[];
       console.log(this.progress)
     });
   }
