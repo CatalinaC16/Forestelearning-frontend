@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="progress-container">
+<div class="progress-container" *ngIf="this.userChangesService.getRoleFromLocalStorage() === 'professor'">
   <h2>Progres useri</h2>
   <div *ngFor="let item of allProgress" class="progress-details">
     <p><strong>Quiz:</strong> {{ item.quiz.title }}</p>
