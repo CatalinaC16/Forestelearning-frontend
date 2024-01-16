@@ -7,6 +7,8 @@ import {map} from "rxjs";
 import {Quiz} from "../../../model/Quiz";
 import {QuizService} from "../../../services/quiz.service";
 import {SnackbarService} from "../../../services/snackbar.service";
+import {ProgressService} from "../../../services/progress.service";
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-quiz-template',
@@ -24,7 +26,9 @@ export class QuizTemplateComponent {
               private route: ActivatedRoute,
               private quizService: QuizService,
               private snackBarService: SnackbarService,
-              private router: Router) {
+              private router: Router,
+              private progressService: ProgressService,
+              private userService: UserService) {
 
     let val = this.route.snapshot.queryParamMap.get('data') ? parseInt(this.route.snapshot.queryParamMap.get('data')!, 10) : 0;
     this.quizService.getQuizById(val).pipe(
@@ -76,6 +80,13 @@ export class QuizTemplateComponent {
         }
       }
     });
+
     this.snackBarService.openSnackBar("Nota obtinuta este: "+nota, "");
+    let data = {
+      userId: localStorage.getItem('id'),
+      quizId: this.quiz?.id,
+      grade: nota
+    }
+    this.progressService.addProgressToUser(data).subscribe();
   }
 }

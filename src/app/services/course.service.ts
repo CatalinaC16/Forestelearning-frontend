@@ -25,6 +25,6 @@ export class CourseService {
   }
 
   createCourse(data:any){
-    return this.http.post(this.apiServiceUrl+ "/courses/add",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')})
+    return this.http.post(this.apiServiceUrl+ "/courses/add",data,{headers:new HttpHeaders().set('Content-Type', 'application/json')});
   }
 }

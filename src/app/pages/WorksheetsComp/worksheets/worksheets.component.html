@@ -9,5 +9,6 @@
     <button *ngIf="isRoleProfesor()" (click)="stergeQuiz(quiz)">Sterge quiz</button>
   </div>
 </div>
+<button class="butonNavigate" [routerLink]="['/grades']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Vezi note pe quiz-uri</button>
 <button class="butonNavigate" (click)="goToPractice()">Mergi la exersarea notiunilor</button>
 
